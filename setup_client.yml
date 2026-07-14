@@ -1,0 +1,80 @@
+- name: Run full setup for FreeIPA
+  hosts: ipaclients
+  become: true
+  gather_facts: true
+  vars_files:
+    - vars/secrets.yml
+    - vars/vars.yml
+  
+  pre_tasks:
+  - name: Ensure hostname has domain attached
+    ansible.builtin.hostname:
+      name: "{{ ansible_facts['hostname'] }}.{{ domain_name }}"
+    when: ansible_facts['fqdn'] != (ansible_facts['hostname'] + '.' + domain_name)
+
+  - name: Input localansible fact directory
+    ansible.builtin.file:
+      path: /etc/ansible/facts.d
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+
+  - name: Create localansible fact file for pupil workstations
+    community.general.ini_file:
+      path: /etc/ansible/facts.d/workstation.fact
+      section: role
+      option: name
+      value: pupil
+      mode: '0644'
+    when: "'pupil_workstations' in group_names"
+
+  - name: Create localansible fact file for staff workstations
+    community.general.ini_file:
+      path: /etc/ansible/facts.d/workstation.fact
+      section: role
+      option: name
+      value: staff
+      mode: '0644'
+    when: "'staff_workstations' in group_names"
+
+
+  roles:
+  - role: ipaclient
+    state: present
+
+
+  tasks:
+  - name: Create /opt/ansible directory
+    ansible.builtin.file:
+      path: /opt/ansible
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+
+  - name: Import ipa-client install playbook
+    ansible.builtin.import_playbook:
+      name: install.client.yml
+
+  - name: Set mac address attribute for each host
+    freeipa.ansible_freeipa.ipahost:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: "{{ item }}"
+      mac_address:
+        - "{{ hostvars[item]['ansible_default_ipv4']['macaddress'] }}"
+      state: present
+    delegate_to: dc1.ipa.rischool.ru
+    loop: "{{ groups['ipaclients'] }}"
+    when: hostvars[item]['ansible_default_ipv4']['macaddress'] is defined
+
+  - name: Install ansible & git
+    ansible.builtin.package:
+      name:
+        - ansible
+        - git
+      state: present
+
+# Now this playbook can be chained with the ansible-pull command
+# The full command should look like this:
+# ansible-playbook setup_client.yml && ansible ipaclients -m command -a "ansible-pull -U https://github.com/passmore-ris/ansible_pull_config.git -d /opt/ansible" -b

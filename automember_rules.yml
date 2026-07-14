@@ -1,0 +1,29 @@
+---
+- name: Configure automember rules
+  hosts: ipaservers
+  become: true
+  gather_facts: true
+  vars_files:
+    - vars/secrets.yml
+    - vars/vars.yml
+
+  tasks:
+
+
+  - name: Ensure automember rule for pupils exists
+    freeipa.ansible_freeipa.ipaautomember:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: pupils
+      automember_type: group
+      inclusive:
+        - key: userclass
+          expression: '^pupils$'
+
+  - name: Ensure automember rule for staff exists
+    freeipa.ansible_freeipa.ipaautomember:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: staff
+      automember_type: group
+      inclusive:
+        - key: userclass
+          expression: '^staff$'

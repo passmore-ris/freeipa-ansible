@@ -1,0 +1,65 @@
+---
+- name: Automatically mount home directories for users from an NFS share
+  hosts: ipaservers
+  become: true
+  gather_facts: true
+  vars_files:
+    - vars/secrets.yml
+    - vars/vars.yml
+
+  tasks:
+
+  - name: Register the NFS service principal
+    freeipa.ansible_freeipa.ipaservice:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: nfs/nfs.ipa.rischool.ru
+      host: nfs.ipa.rischool.ru
+      state: present
+
+  - name: Generate and install NFS keytab on the NFS server
+    community.general.ipa_getkeytab:
+      ipa_host: ipaserver.ipa.rischool.ru
+      principal: nfs/nfs.ipa.rischool.ru
+      path: /etc/krb5.keytab
+      state: present
+    delegate_to: nfs.ipa.rischool.ru
+
+  - name: Ensure the Selinux boolean for NFS homes is set
+    ansible.posix.seboolean:
+      name: use_nfs_home_dirs
+      state: true
+      persistent: true
+    delegate_to: nfs.ipa.rischool.ru
+
+  - name: Ensure the auto.home map exists
+    freeipa.ansible_freeipa.ipaautomountmap:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      location: default
+      name: auto.home
+      desc: "Automount map for user home directories"
+
+  - name: Link auto.home to the global /home directory structure
+    freeipa.ansible_freeipa.ipaautomountkey:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      location: default
+      mapname: auto.master
+      key: /home
+      info: auto.home
+
+  - name: Ensure correct configuration for nfs share path
+    ansible.builtin.file:
+      path: "{{ nfs_share_path }}"
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+    delegate_to: nfs.ipa.rischool.ru
+
+  - name: Create a single wildcard key for all user home directories
+    freeipa.ansible_freeipa.ipaautomountkey:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      location: default
+      mapname: auto.home
+      key: "*"
+      info: "-fstype=nfs4,rw,sec=krb5,soft nfs.ipa.rischool.ru:{{ nfs_share_path }}/&"
+      state: present

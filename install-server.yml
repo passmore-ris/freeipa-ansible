@@ -1,0 +1,10 @@
+---
+- name: Playbook to configure IPA server
+  hosts: ipaservers
+  become: true
+  vars_files:
+  - vars/secrets.yml
+
+  roles:
+  - role: ipaserver
+    state: present

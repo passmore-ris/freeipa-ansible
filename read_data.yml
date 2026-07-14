@@ -1,0 +1,21 @@
+---
+- name: Configuring Users
+  hosts: localhost
+  become: true
+  vars:
+    ansible_become_pass: "{{ vault_become_password }}"
+  gather_facts: true
+  vars_files: vars/secrets.yml
+
+  tasks:
+  - name: Parse staff user data from .csv file
+    community.general.read_csv:
+      path: data/staff_users_test.csv
+    register: staff_users
+    delegate_to: localhost
+
+  - name: Parse pupil user data from .csv file
+    community.general.read_csv:
+      path: data/pupil_users_test.csv
+    register: pupil_users
+    delegate_to: localhost

@@ -1,0 +1,18 @@
+---
+- name: Playbook to handle groups
+  hosts: ipaservers
+  become: true
+
+  tasks:
+
+  - name: Create group sysops
+    ipagroup:
+      ipaadmin_password: SomeADMINpassword
+      name: sysops
+      user:
+      - pinky
+
+  - name: Create group appops
+    ipagroup:
+      ipaadmin_password: SomeADMINpassword
+      name: appops

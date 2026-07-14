@@ -1,0 +1,36 @@
+- name: Check if home directory exists for {{ user.name }}
+  ansible.builtin.stat:
+    path: "{{ share_path }}/{{ user.name }}"
+  register: home_dir_check
+
+- name: Provision new home directories for users who do not have one
+  when: not home_dir_check.stat.exists
+  block:
+    - name: Create home directory for {{ user.name }}
+      ansible.builtin.file:
+        path: "{{ share_path }}/{{ user.name }}"
+        state: directory
+        owner: "{{ user.name }}"
+        group: "{{ user.userclass | default(user.name) }}"
+        mode: '0600'
+
+    - name: Extract pupil template for {{ user.name }}
+      ansible.builtin.unarchive:
+        src: /opt/templates/pupil_skel.tar.gz
+        dest: "{{ share_path }}/{{ user.name }}"
+        remote_src: true
+      when: user.userclass == 'pupils'
+
+    - name: Extract staff template for {{ user.name }}
+      ansible.builtin.unarchive:
+        src: /opt/templates/staff_skel.tar.gz
+        dest: "{{ share_path }}/{{ user.name }}"
+        remote_src: true
+      when: user.userclass == 'staff'
+
+    - name: Set correct ownership recursively for {{ user.name }}
+      ansible.builtin.file:
+        path: "{{ share_path }}/{{ user.name }}"
+        owner: "{{ user.name }}"
+        group: "{{ user.userclass | default(user.name) }}"
+        recurse: true

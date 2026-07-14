@@ -1,0 +1,81 @@
+---
+- name: Get pupil and staff data from csv files
+  tags: always
+  ansible.builtin.import_playbook: read_data.yml
+
+- name: Configure users
+  hosts: ipaservers
+  become: true
+  gather_facts: true
+  tags: user_setup
+  vars_files:
+    - vars/secrets.yml
+
+  tasks:
+
+  - name: Combine and format user data
+    ansible.builtin.set_fact:
+      users: "{{ hostvars['localhost']['staff_users'].list + hostvars['localhost']['pupil_users'].list }}"
+
+  - name: Configure users
+    freeipa.ansible_freeipa.ipauser:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: "{{ item.name }}"
+      first: "{{ item.first }}"
+      last: "{{ item.last }}"
+      email: "{{ item.email }}"
+      password: "{{ item.password }}"
+      passwordexpiration: "2023-01-19 23:59:59" # Force immediate password reset
+      principalexpiration: "{{ item.principalexpiration | default(omit) }}"
+      state: "{{ item.state }}"
+      update_password: on_create
+      userclass: "{{ item.userclass }}"
+    loop: "{{ users }}"
+    loop_control:
+      label: "{{ item.name }}" # Only print the username in the output, not the whole dictionary
+    when: item.state != 'absent'
+
+# Can't use the freeipa.ansible_freeipa.ipauser module to remove users because it requires a password to be set,
+# which is not possible for absent users.
+# Instead, we will use the same module but hardcode the state to absent and only provide the name of the user to be removed.
+  - name: Ensure absent users are removed
+    freeipa.ansible_freeipa.ipauser:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: "{{ item.name }}"
+      state: absent
+    loop: "{{ users }}"
+    loop_control:
+      label: "{{ item.name }}"
+    when: item.state == 'absent'
+
+- name: Provision home directories for new users
+  hosts: nfs.ipa.rischool.ru
+  become: true
+  gather_facts: true
+  tags: homes
+  vars_files:
+    - vars/secrets.yml
+    - vars/vars.yml
+  vars:
+    users: "{{ hostvars['localhost']['staff_users'].list + hostvars['localhost']['pupil_users'].list }}"
+  tasks:
+
+  - name: Remove home directories for absent users
+    ansible.builtin.file:
+      path: "{{ nfs_share_path }}/{{ item.name }}"
+      state: absent
+    loop: "{{ users }}"
+    loop_control:
+      label: "{{ item.name }}"
+    when: item.state == 'absent'
+
+  - name: Create home directories
+    ansible.builtin.include_tasks: provision_user_home.yml
+    loop: "{{ users }}"
+    loop_control:
+      loop_var: user
+      label: "{{ user.name }}"
+    vars:
+      share_path: "{{ nfs_share_path }}"
+    when: user.state != 'absent'
+      

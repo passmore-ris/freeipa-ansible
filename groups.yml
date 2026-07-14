@@ -1,0 +1,43 @@
+---
+- name: Get pupil and staff data from csv files
+  ansible.builtin.import_playbook: read_data.yml
+  tags: always
+  # Registers 'staff_users' and 'pupil_users' as variables
+
+- name: Playbook to handle groups
+  hosts: ipaservers
+  vars_files: vars/secrets.yml
+
+# Ensure that all staff groups are five-digit numbers starting with a 1
+# Ensure that all pupil groups are five-digit nubnmbers starting with a 9
+
+  tasks:
+  - name: Staff group
+    freeipa.ansible_freeipa.ipagroup:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: staff
+      description: Group containing all staff members
+      gid: 10000
+      state: present
+    tags: default_groups
+      
+  - name: Pupils group
+    freeipa.ansible_freeipa.ipagroup:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: pupils
+      description: Group containing all pupils
+      gid: 90000
+      state: present
+    tags: default_groups
+
+  - name: Admins group
+    freeipa.ansible_freeipa.ipagroup:
+      ipaadmin_password: "{{ vault_ipaadmin_password }}"
+      name: admins
+      description: Group containing all admins
+      gid: 10001
+      user:
+        - admin   # State users explicitly, since there shouldn't be many admins
+        - passmore.b
+      state: present
+    tags: admin
