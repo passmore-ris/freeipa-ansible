@@ -1,0 +1,46 @@
+# IMPORTANT
+# On initial setup, the NFS server may be placed to the group '[ipaclients]' to install it as a FreeIPA client.
+# However, it must be placed in a separate group (e.g. [nfsserver]) afterwards!
+# This is to avoid reinstallation of the IPA client, which will reset the keytab, and break NFS sharing!
+# DO NOT reinstall FreeIPA client on the NFS server!
+# Run this playbook after the IPA server has been set up.
+---
+- name: Set up NFS server
+- hosts: nfs.ipa.rischool.ru
+- become: true
+- gather_facts: true
+  vars_files:
+    - vars/secrets.yml
+    - vars/vars.yml
+
+  pre-tasks:
+  - name: Update repositories
+    ansible.builtin.package:
+      update_cache: true
+
+  roles:
+  - role: ipaclient
+    state: present
+
+  tasks:
+  - name: Ensure /opt/templates directory exists
+    ansible.builtin.file:
+      path: /opt/templates
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+
+  - name: Copy over template files
+    ansible.builtin.copy:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      owner: root
+      group: root
+      mode: '0644'
+    loop:
+      - { src: 'files/pupil_skel.tar.gz', dest: '/opt/templates/pupil_skel.tar.gz' }
+      - { src: 'files/staff_skel.tar.gz', dest: '/opt/templates/staff_skel.tar.gz' }
+
+- name: Configure automount for home directories
+  ansible.builtin.import_playbook: mount_homes.yml
