@@ -1,6 +1,5 @@
 # Where I left off
 
-
 # Overall plan
 - [x] Add root user to fedora workstations.
 - [x] Change ansible_user to root so I can connect without a sudo password.
@@ -23,13 +22,16 @@
 - [ ] Create base image of Debian workstation (set hostname, enable root user, enable ssh root & key login, set repositories if necessary)
     - [ ] Macbook
     - [ ] Honor Laptop
-- [ ] Automate initial setup of client (*input local ansible fact, create directory /opt/ansible set mac address attribute, install community.general from ansible galaxy, install-client, install ansible (ansible-core for dnf) & git, ansible-pull execution*)
+- [x] Automate initial setup of client (*input local ansible fact, create directory /opt/ansible set mac address attribute, install community.general from ansible galaxy, install-client, install ansible (ansible-core for dnf) & git, ansible-pull execution*)
     - [x] Input local ansible fact
     - [x] Create /opt/ansible directory
     - [x] Set MAC address attribute
     - [x] Install ipaclient
-    - [ ] Install ansible & git
-    - [ ] Execute ansible pull
+    - [x] Install ansible & git
+    - [x] Execute ansible pull
 - [ ] Automate initial setup of NFS server
+    - [x] Install FreeIPA client
+    - [ ] Run mount_homes
+    - [x] Copy over /opt/templates directory
 - [x] Mount remote storage
 - [ ] Set up NetBird

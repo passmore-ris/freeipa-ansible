@@ -1,6 +1,6 @@
 ---
-- name: Automatically mount home directories for users from an NFS share
-  hosts: ipaservers
+- name: Create automount map
+  hosts: ipaserver
   become: true
   gather_facts: true
   vars_files:
@@ -9,57 +9,84 @@
 
   tasks:
 
-  - name: Register the NFS service principal
-    freeipa.ansible_freeipa.ipaservice:
-      ipaadmin_password: "{{ vault_ipaadmin_password }}"
-      name: nfs/nfs.ipa.rischool.ru
-      host: nfs.ipa.rischool.ru
-      state: present
+    - name: Register the NFS service principal
+      freeipa.ansible_freeipa.ipaservice:
+        ipaadmin_password: "{{ vault_ipaadmin_password }}"
+        name: nfs/nfs.ipa.rischool.ru
+        host: nfs.ipa.rischool.ru
+        allow_create_keytab_host: nfs.ipa.rischool.ru
+        state: present
 
-  - name: Generate and install NFS keytab on the NFS server
-    community.general.ipa_getkeytab:
-      ipa_host: ipaserver.ipa.rischool.ru
-      principal: nfs/nfs.ipa.rischool.ru
-      path: /etc/krb5.keytab
-      state: present
-    delegate_to: nfs.ipa.rischool.ru
 
-  - name: Ensure the Selinux boolean for NFS homes is set
-    ansible.posix.seboolean:
-      name: use_nfs_home_dirs
-      state: true
-      persistent: true
-    delegate_to: nfs.ipa.rischool.ru
+    - name: Ensure the auto.home map exists
+      freeipa.ansible_freeipa.ipaautomountmap:
+        ipaadmin_password: "{{ vault_ipaadmin_password }}"
+        location: default
+        name: auto.home
+        desc: "Automount map for user home directories"
 
-  - name: Ensure the auto.home map exists
-    freeipa.ansible_freeipa.ipaautomountmap:
-      ipaadmin_password: "{{ vault_ipaadmin_password }}"
-      location: default
-      name: auto.home
-      desc: "Automount map for user home directories"
+    - name: Link auto.home to the global /home directory structure
+      freeipa.ansible_freeipa.ipaautomountkey:
+        ipaadmin_password: "{{ vault_ipaadmin_password }}"
+        location: default
+        mapname: auto.master
+        key: /home
+        info: auto.home
 
-  - name: Link auto.home to the global /home directory structure
-    freeipa.ansible_freeipa.ipaautomountkey:
-      ipaadmin_password: "{{ vault_ipaadmin_password }}"
-      location: default
-      mapname: auto.master
-      key: /home
-      info: auto.home
+    - name: Create a single wildcard key for all user home directories
+      freeipa.ansible_freeipa.ipaautomountkey:
+        ipaadmin_password: "{{ vault_ipaadmin_password }}"
+        location: default
+        mapname: auto.home
+        key: "*"
+        info: "-fstype=nfs4,rw,sec=krb5,soft nfs.ipa.rischool.ru:{{ nfs_share_path }}/&"
+        state: present
 
-  - name: Ensure correct configuration for nfs share path
-    ansible.builtin.file:
-      path: "{{ nfs_share_path }}"
-      state: directory
-      owner: root
-      group: root
-      mode: '0755'
-    delegate_to: nfs.ipa.rischool.ru
+- name: Configure NFS server to serve auomounts
+  hosts: "{{ nfs_fqdn }}"
+  become: true
+  gather_facts: true
+  vars_files:
+    - vars/vars.yml
+    - vars/secrets.yml
 
-  - name: Create a single wildcard key for all user home directories
-    freeipa.ansible_freeipa.ipaautomountkey:
-      ipaadmin_password: "{{ vault_ipaadmin_password }}"
-      location: default
-      mapname: auto.home
-      key: "*"
-      info: "-fstype=nfs4,rw,sec=krb5,soft nfs.ipa.rischool.ru:{{ nfs_share_path }}/&"
-      state: present
+  tasks:
+    - name: Get Kerberos ticket
+      community.general.krb_ticket:
+        password: "{{ vault_ipaadmin_password }}"
+
+    # - name: Generate and install NFS keytab on the NFS server
+    #   community.general.ipa_getkeytab:
+    #     ipa_host: "{{ ipaserver_fqdn }}"
+    #     principal: nfs/nfs.ipa.rischool.ru
+    #     path: /etc/krb5.keytab
+    #     state: present
+    #     force: true
+
+    # I would like to be able to use the community.general.ipa_getkeytab module, but it either ignores the current task or overwrites the current keytab.
+    - name: Generate, retrieve, and install the keytab for the new NFS service principal to /etc/krb5.keytab
+      ansible.builtin.command: ipa-getkeytab -s "{{ ipaserver_fqdn }}"  -p nfs/nfs.ipa.rischool.ru -k /etc/krb5.keytab
+
+    - name: Ensure nfs share path exists
+      ansible.builtin.file:
+        path: "{{ nfs_share_path }}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Add path to /etc/exports on the nfs server
+      ansible.builtin.lineinfile:
+        path: /etc/exports
+        line: "{{ nfs_share_path }} *(rw,sec=krb5:krb5i:krb5p)"
+      tags: exports
+
+    - name: Start export
+      ansible.builtin.command: exportfs -rav
+      delegate_to: "{{ nfs_fqdn }}"
+
+    - name: Ensure nfs-server is started and enabled
+      ansible.builtin.service:
+        name: nfs-server
+        state: started
+        enabled: true

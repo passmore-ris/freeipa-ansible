@@ -6,41 +6,38 @@
 # Run this playbook after the IPA server has been set up.
 ---
 - name: Set up NFS server
-- hosts: nfs.ipa.rischool.ru
-- become: true
-- gather_facts: true
+  hosts: nfs.ipa.rischool.ru
+  become: true
+  gather_facts: true
   vars_files:
     - vars/secrets.yml
     - vars/vars.yml
 
-  pre-tasks:
-  - name: Update repositories
-    ansible.builtin.package:
-      update_cache: true
+  pre_tasks:
+    - name: Update repositories
+      ansible.builtin.package:
+        update_cache: true
 
   roles:
-  - role: ipaclient
-    state: present
+    - role: ipaclient
+      state: present
 
   tasks:
-  - name: Ensure /opt/templates directory exists
-    ansible.builtin.file:
-      path: /opt/templates
-      state: directory
-      owner: root
-      group: root
-      mode: '0755'
+    - name: Ensure /opt/templates directory exists
+      ansible.builtin.file:
+        path: /opt/templates
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
 
-  - name: Copy over template files
-    ansible.builtin.copy:
-      src: "{{ item.src }}"
-      dest: "{{ item.dest }}"
-      owner: root
-      group: root
-      mode: '0644'
-    loop:
-      - { src: 'files/pupil_skel.tar.gz', dest: '/opt/templates/pupil_skel.tar.gz' }
-      - { src: 'files/staff_skel.tar.gz', dest: '/opt/templates/staff_skel.tar.gz' }
-
-- name: Configure automount for home directories
-  ansible.builtin.import_playbook: mount_homes.yml
+    - name: Copy over template files
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        owner: root
+        group: root
+        mode: '0644'
+      loop:
+        - { src: 'files/pupil_skel.tar.gz', dest: '/opt/templates/pupil_skel.tar.gz' }
+        - { src: 'files/staff_skel.tar.gz', dest: '/opt/templates/staff_skel.tar.gz' }

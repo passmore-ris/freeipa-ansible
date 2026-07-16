@@ -5,7 +5,7 @@
   # Registers 'staff_users' and 'pupil_users' as variables
 
 - name: Playbook to handle groups
-  hosts: ipaservers
+  hosts: ipaserver
   vars_files: vars/secrets.yml
 
 # Ensure that all staff groups are five-digit numbers starting with a 1

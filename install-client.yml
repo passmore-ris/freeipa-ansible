@@ -3,8 +3,8 @@
   hosts: ipaclients
   become: true
   vars_files:
-  - vars/secrets.yml
+    - vars/secrets.yml
 
   roles:
-  - role: ipaclient
-    state: present
+    - role: ipaclient
+      state: present
