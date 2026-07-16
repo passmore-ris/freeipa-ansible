@@ -1,2 +1,4 @@
 data/*.csv
+!data/pupil_sample.csv
+!data/staff_sample.csv
 TODO.md
