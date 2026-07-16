@@ -11,8 +11,8 @@
         path: "{{ share_path }}/{{ user.name }}"
         state: directory
         owner: "{{ user.name }}"
-        group: "{{ user.userclass | default(user.name) }}"
-        mode: '0600'
+        group: "{{ user.name }}"
+        mode: '0700'
 
     - name: Extract pupil template for {{ user.name }}
       ansible.builtin.unarchive:
@@ -32,5 +32,5 @@
       ansible.builtin.file:
         path: "{{ share_path }}/{{ user.name }}"
         owner: "{{ user.name }}"
-        group: "{{ user.userclass | default(user.name) }}"
+        group: "{{ user.name }}"
         recurse: true

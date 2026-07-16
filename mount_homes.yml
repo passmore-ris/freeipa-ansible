@@ -6,6 +6,7 @@
   vars_files:
     - vars/secrets.yml
     - vars/vars.yml
+  tags: map
 
   tasks:
 
@@ -13,10 +14,15 @@
       freeipa.ansible_freeipa.ipaservice:
         ipaadmin_password: "{{ vault_ipaadmin_password }}"
         name: nfs/nfs.ipa.rischool.ru
-        host: nfs.ipa.rischool.ru
-        allow_create_keytab_host: nfs.ipa.rischool.ru
+        host: "{{ nfs_fqdn }}"
         state: present
 
+    - name: Ensure the Selinux boolean for NFS homes is set
+      ansible.posix.seboolean:
+        name: use_nfs_home_dirs
+        state: true
+        persistent: true
+      delegate_to: nfs.ipa.rischool.ru
 
     - name: Ensure the auto.home map exists
       freeipa.ansible_freeipa.ipaautomountmap:

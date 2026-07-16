@@ -29,9 +29,9 @@
     - [x] Install ipaclient
     - [x] Install ansible & git
     - [x] Execute ansible pull
-- [ ] Automate initial setup of NFS server
+- [x] Automate initial setup of NFS server
     - [x] Install FreeIPA client
-    - [ ] Run mount_homes
+    - [x] Run mount_homes
     - [x] Copy over /opt/templates directory
 - [x] Mount remote storage
 - [ ] Set up NetBird

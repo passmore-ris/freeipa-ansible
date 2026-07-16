@@ -78,4 +78,3 @@
       vars:
         share_path: "{{ nfs_share_path }}"
       when: user.state != 'absent'
-        

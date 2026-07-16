@@ -11,6 +11,11 @@ This is a repository containing an ansible collection used to set up and configu
 ## Setup
 Here are instructions on how to set up the FreeIPA infrastructure using this repository.
 ### The IPA Server
+To do this all in one command:
+```
+ansible-playbook install-server.yml && ansible-playbook groups.yml --tags default_groups && ansible-playbook automember_rules.yml
+```
+This consists of three parts:
 1. First, the server must be installed. Simply run:
 ```
 ansible-playbook install-server.yml
@@ -30,7 +35,7 @@ For now both the NFS server and workstations should all be grouped as IPA client
 ```
 ansible-playbook setup_nfs_server.yml
 ```
-2. Then we need to configure the automounts, so that users have raoming home directories. This will require the main IPA server to be available as well.
+2. Then we need to configure the automounts, so that users have roaming home directories.
 ```
 ansible-playbook mount_homes.yml
 ```

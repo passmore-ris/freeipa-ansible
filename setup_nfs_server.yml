@@ -41,3 +41,15 @@
       loop:
         - { src: 'files/pupil_skel.tar.gz', dest: '/opt/templates/pupil_skel.tar.gz' }
         - { src: 'files/staff_skel.tar.gz', dest: '/opt/templates/staff_skel.tar.gz' }
+
+    - name: Allow nfs services through firewall
+      ansible.posix.firewalld:
+        service: nfs
+        state: enabled
+        permanent: true
+
+    - name: Allow rpc-bind services through firewall
+      ansible.posix.firewalld:
+        service: rpc-bind
+        state: enabled
+        permanent: true
