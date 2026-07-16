@@ -8,6 +8,11 @@ This is a repository containing an ansible collection used to set up and configu
 - The NFS server must be named **nfs.ipa.rischool.ru**
 - You must have the *freeipa.ansible_freeipa* and *community.general* collections installed from ansible galaxy.
 
+### The *hosts.ini* File
+
+### CSV data
+
+
 ## Setup
 Here are instructions on how to set up the FreeIPA infrastructure using this repository.
 ### The IPA Server
