@@ -53,3 +53,7 @@
         service: rpc-bind
         state: enabled
         permanent: true
+
+    - name: Reboot machine and send a message
+      ansible.builtin.reboot:
+        msg: "Rebooting..."
