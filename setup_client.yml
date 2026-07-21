@@ -53,6 +53,16 @@
         group: root
         mode: '0755'
 
+    - name: Input ansible-pull vault password
+      ansible.builtin.copy:
+        dest: /opt/ansible/.vault-password
+        owner: root
+        group: root
+        mode: '0600'
+        content: "{{ ansible_pull_vault_password }}"
+      no_log: true
+
+
     - name: Install ansible & git
       ansible.builtin.package:
         name:
