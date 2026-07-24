@@ -1,0 +1,344 @@
+2026-07-24 15:00:42,272 p=10345 u=ben n=ansible | macbook15.ipa.rischool.ru | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: root@192.168.0.221: Permission denied (publickey,password).",
+    "unreachable": true
+}
+2026-07-24 15:02:21,650 p=10797 u=ben n=ansible | macbook15.ipa.rischool.ru | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-07-24 15:04:25,166 p=11040 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-07-24 15:04:25,248 p=11040 u=ben n=ansible | PLAY [Run full setup for FreeIPA] **********************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:25,272 p=11040 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:27,779 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:04:27,791 p=11040 u=ben n=ansible | TASK [Ensure hostname has domain attached] *************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:27,801 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:04:27,814 p=11040 u=ben n=ansible | TASK [Input localansible fact directory] ***************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:28,237 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:04:28,250 p=11040 u=ben n=ansible | TASK [Create localansible fact file for pupil workstations] ********************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:28,259 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:04:28,270 p=11040 u=ben n=ansible | TASK [Create localansible fact file for staff workstations] ********************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:28,729 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:04:28,852 p=11040 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:28,961 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/Debian.yml)
+2026-07-24 15:04:28,974 p=11040 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:29,303 p=11040 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for macbook15.ipa.rischool.ru
+2026-07-24 15:04:29,399 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-07-24 15:04:29,477 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:04:29,488 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-07-24 15:04:29,512 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:04:29,560 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:29,777 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:29,787 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:29,806 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:29,818 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-07-24 15:05:29,847 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:29,860 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-07-24 15:05:29,874 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:29,886 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-07-24 15:05:29,901 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:29,913 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-07-24 15:05:29,940 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:29,951 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:29,978 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:29,991 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:31,295 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:31,308 p=11040 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:32,476 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:32,490 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Cleanup leftover ccache] ***************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:32,848 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:32,861 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure NTP] *************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:41,280 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:41,294 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Make sure One-Time Password is enabled if it's already defined] ************************************************************************************************************************************************************************************
+2026-07-24 15:05:41,325 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:41,336 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Disable One-Time Password for on_master] ***********************************************************************************************************************************************************************************************************
+2026-07-24 15:05:41,363 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:41,375 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Test if IPA client has working krb5.keytab] ********************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,391 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,405 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Disable One-Time Password for client with working krb5.keytab] *************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,429 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,440 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Keytab or password is required for getting otp] ****************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,476 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,489 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Create temporary file for keytab] ******************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,535 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,546 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Copy keytab to server temporary file] **************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,584 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,595 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Get One-Time Password for client enrollment] *******************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,631 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,642 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Store the previously obtained OTP] *****************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,671 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,683 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Remove keytab temporary file] **********************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,721 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,732 p=11040 u=ben n=ansible | TASK [ipaclient : Store predefined OTP in admin_password] **********************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,759 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,771 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Check if principal and keytab are set] *************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,801 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,812 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Check if one of password or keytabs are set] *******************************************************************************************************************************************************************************************************
+2026-07-24 15:05:42,842 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:42,899 p=11040 u=ben n=ansible | TASK [ipaclient : Install - From host keytab, purge IPA.RISCHOOL.RU] ***********************************************************************************************************************************************************************************************************
+2026-07-24 15:05:43,413 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:43,427 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Backup and set hostname] ***************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:44,586 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:44,598 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Create temporary krb5 configuration] ***************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:45,593 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:45,606 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Join IPA] ******************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:48,896 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:48,909 p=11040 u=ben n=ansible | TASK [ipaclient : The krb5 configuration is not correct] ***********************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:48,936 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:48,948 p=11040 u=ben n=ansible | TASK [ipaclient : IPA test failed] *********************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:48,975 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:48,987 p=11040 u=ben n=ansible | TASK [ipaclient : Fail due to missing ca.crt file] *****************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:49,014 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:49,025 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure IPA default.conf] ************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:50,402 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:50,416 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure SSSD] ************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:51,583 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:51,596 p=11040 u=ben n=ansible | TASK [ipaclient : Install - IPA API calls for remaining enrollment parts] ******************************************************************************************************************************************************************************************************
+2026-07-24 15:05:54,915 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:54,929 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Fix IPA ca] ****************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:05:54,957 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:05:54,968 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Create IPA NSS database] ***************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:04,482 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:04,496 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure SSH and SSHD] ****************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:05,683 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:05,696 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure automount] *******************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:09,016 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:09,028 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure firefox] *********************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:09,064 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:09,079 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure NIS] *************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:10,100 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:10,112 p=11040 u=ben n=ansible | TASK [ipaclient : Remove temporary krb5.conf] **********************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:10,488 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:10,500 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure krb5 for IPA realm] **********************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:11,547 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:11,608 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Configure certmonger] ******************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:13,077 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:13,088 p=11040 u=ben n=ansible | TASK [ipaclient : Install - Restore original admin password if overwritten by OTP] *********************************************************************************************************************************************************************************************
+2026-07-24 15:06:13,115 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:13,127 p=11040 u=ben n=ansible | TASK [ipaclient : Cleanup leftover ccache] *************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:13,503 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:13,516 p=11040 u=ben n=ansible | TASK [ipaclient : Remove temporary krb5.conf] **********************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:13,895 p=11040 u=ben n=ansible | ok: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:13,907 p=11040 u=ben n=ansible | TASK [ipaclient : Remove temporary krb5.conf backup] ***************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:14,268 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:14,282 p=11040 u=ben n=ansible | TASK [ipaclient : Uninstall IPA client] ****************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:14,306 p=11040 u=ben n=ansible | skipping: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:14,328 p=11040 u=ben n=ansible | TASK [Create /opt/ansible directory] *******************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:14,763 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:14,775 p=11040 u=ben n=ansible | TASK [Input ansible-pull vault password] ***************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:06:15,807 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:06:15,820 p=11040 u=ben n=ansible | TASK [Install ansible & git] ***************************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:07:00,255 p=11040 u=ben n=ansible | changed: [macbook15.ipa.rischool.ru]
+2026-07-24 15:07:00,299 p=11040 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-07-24 15:07:00,299 p=11040 u=ben n=ansible | macbook15.ipa.rischool.ru  : ok=32   changed=22   unreachable=0    failed=0    skipped=28   rescued=0    ignored=0   
+2026-07-24 15:13:45,988 p=11719 u=ben n=ansible | macbook15.ipa.rischool.ru | CHANGED | rc=0 >>
+[WARNING]: Could not match supplied host pattern, ignoring: macbook15
+[WARNING]: Could not match supplied host pattern, ignoring: macbook15.ipa.rischool.ru
+localhost | CHANGED => {
+    "after": "74e5742c180bcc99c7a67e5b522161119d56ce7e",
+    "before": null,
+    "changed": true
+}
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+[WARNING]: Could not match supplied host pattern, ignoring: macbook15
+[WARNING]: Could not match supplied host pattern, ignoring: macbook15.ipa.rischool.ru
+
+PLAY [Execute ansible-pull] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Update apt repositories] *************************************************
+ok: [localhost]
+
+TASK [Update dnf repositories] *************************************************
+skipping: [localhost]
+
+TASK [Ensure presence of /var/cache/ansible] ***********************************
+changed: [localhost]
+
+TASK [Change repositories to Yandex mirrors] ***********************************
+included: /opt/ansible/tasks/repositories.yml for localhost
+
+TASK [Set Debian repositories to Yandex mirrors] *******************************
+changed: [localhost]
+
+TASK [Set Rocky Linux repositories to Yandex mirrors] **************************
+skipping: [localhost]
+
+TASK [Update cache] ************************************************************
+ok: [localhost]
+
+TASK [Add wallpapers] **********************************************************
+included: /opt/ansible/tasks/wallpapers.yml for localhost
+
+TASK [Disable Pride wallpaper in GNOME settings] *******************************
+changed: [localhost]
+
+TASK [Add cosmic wallpapers] ***************************************************
+changed: [localhost]
+
+TASK [Update xml for cosmic wallpapers] ****************************************
+changed: [localhost]
+
+TASK [Install packages] ********************************************************
+included: /opt/ansible/tasks/packages.yml for localhost
+
+TASK [Install depedencies for debian-based systems] ****************************
+changed: [localhost]
+
+TASK [Download OnlyOffice GPG key from Ubuntu keyserver] ***********************
+changed: [localhost]
+
+TASK [Add OnlyOffice DEB822 repository] ****************************************
+changed: [localhost]
+
+TASK [Add Sublime repository] **************************************************
+changed: [localhost]
+
+TASK [Add Google Chrome deb repository] ****************************************
+changed: [localhost]
+
+TASK [Ensure the Flathub repository is enabled] ********************************
+changed: [localhost]
+
+TASK [Install apt packages for both pupil and staff workstations] **************
+changed: [localhost]
+
+TASK [Install flatpaks for both pupil and staff workstations] ******************
+changed: [localhost]
+
+TASK [Install apt packages for pupil workstations] *****************************
+skipping: [localhost]
+
+TASK [Check for Turbowarp installation file] ***********************************
+skipping: [localhost]
+
+TASK [Download deb package for Turbowarp Desktop] ******************************
+skipping: [localhost]
+
+TASK [Install Turbowarp Desktop] ***********************************************
+skipping: [localhost]
+
+TASK [Add Google Chrome yum repository] ****************************************
+skipping: [localhost]
+
+TASK [Install general packages for staff workstations] *************************
+changed: [localhost]
+
+TASK [Install apt-specific packages for staff workstations] ********************
+changed: [localhost]
+
+TASK [Install flatpaks for staff workstations] *********************************
+changed: [localhost]
+
+TASK [Edit packages] ***********************************************************
+skipping: [localhost]
+
+TASK [Make users] **************************************************************
+included: /opt/ansible/tasks/users.yml for localhost
+
+TASK [Create ansible user] *****************************************************
+changed: [localhost]
+
+TASK [Copy sudoers_ansible] ****************************************************
+changed: [localhost]
+
+TASK [Set cron jobs] ***********************************************************
+included: /opt/ansible/tasks/cron.yml for localhost
+
+TASK [Install cronie] **********************************************************
+skipping: [localhost]
+
+TASK [Install cron job (ansible-pull)] *****************************************
+changed: [localhost]
+
+TASK [Configure the login screen] **********************************************
+included: /opt/ansible/tasks/login_screen.yml for localhost
+
+TASK [Check if GNOME is in use] ************************************************
+ok: [localhost]
+
+TASK [Turn on manual login for Linux Mint workstations] ************************
+skipping: [localhost]
+
+TASK [Turn on manual login for MOS workstations] *******************************
+skipping: [localhost]
+
+TASK [Ensure logo directory exists] ********************************************
+changed: [localhost]
+
+TASK [Copy logo to workstation] ************************************************
+changed: [localhost]
+
+TASK [Copy greeter dconf file to debian workstations] **************************
+changed: [localhost]
+
+TASK [Update dconf database] ***************************************************
+ok: [localhost]
+
+TASK [Install and start autofs] ************************************************
+included: /opt/ansible/tasks/autofs.yml for localhost
+
+TASK [Install autofs and nfs-common with apt] **********************************
+changed: [localhost]
+
+TASK [Ensure autofs is included in SSSD services] ******************************
+changed: [localhost]
+
+TASK [Ensure autofs is started and enabled] ************************************
+ok: [localhost]
+
+TASK [Restart sssd] ************************************************************
+changed: [localhost]
+
+TASK [Restart autofs] **********************************************************
+changed: [localhost]
+
+TASK [Set Firefox policy] ******************************************************
+included: /opt/ansible/tasks/firefox.yml for localhost
+
+TASK [Copy firefox policies to /usr/lib/firefox-esr/distribution/policies.json] ***
+changed: [localhost]
+
+TASK [Install Veyon] ***********************************************************
+included: /opt/ansible/tasks/veyon.yml for localhost
+
+TASK [Check if Veyon has already been downloaded] ******************************
+ok: [localhost]
+
+TASK [Download Veyon .deb for Ubuntu] ******************************************
+skipping: [localhost]
+
+TASK [Download Veyon .deb for Debian 13] ***************************************
+changed: [localhost]
+
+TASK [Download Veyon .rpm for Rocky/Alma/CentOS/RedHat 10] *********************
+skipping: [localhost]
+
+TASK [Install Veyon .deb package] **********************************************
+changed: [localhost]
+
+TASK [Install Veyon .rpm package] **********************************************
+skipping: [localhost]
+
+TASK [Transfer Veyon configuration] ********************************************
+changed: [localhost]
+
+TASK [Import Veyon configuration] **********************************************
+ok: [localhost]
+
+TASK [Only allow staff to execute Veyon Master] ********************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=48   changed=31   unreachable=0    failed=0    skipped=14   rescued=0    ignored=0   
+
+Starting Ansible Pull at 2026-07-24 15:07:07
+/usr/bin/ansible-pull -U https://github.com/passmore-ris/ansible_pull_config.git -d /opt/ansible --vault-password /opt/.vault-password
+
