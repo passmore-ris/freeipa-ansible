@@ -55,7 +55,7 @@
 
     - name: Input ansible-pull vault password
       ansible.builtin.copy:
-        dest: /opt/ansible/.vault-password
+        dest: /opt/.vault-password
         owner: root
         group: root
         mode: '0600'
@@ -72,4 +72,6 @@
 
 # Now this playbook can be chained with the ansible-pull command
 # The full command should look like this:
-# ansible-playbook setup_client.yml && ansible ipaclients -m command -a "ansible-pull -U https://github.com/passmore-ris/ansible_pull_config.git -d /opt/ansible" -b
+# ansible-playbook setup_client.yml && ansible ipaclients -m command -a \
+# "ansible-pull -U https://github.com/passmore-ris/ansible_pull_config.git -d /opt/ansible \
+# --vault-password /opt/ansible/.vault-password" -b

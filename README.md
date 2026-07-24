@@ -77,7 +77,7 @@ ansible-playbook setup_client.yml
 This will ensure the domain name is already part of the hostname and install a local ansible fact. The fact relates to whether the host is a pupil or staff workstation.
 3. Then, ansible-pull must be executed. This will set up the workstations and allow them to be configured from a central repository:
 ```
-ansible ipaclients -m command -a "ansible-pull -U https://github.com/passmore-ris/ansible_pull_config.git -d /opt/ansible" -b
+ansible ipaclients -m command -a "ansible-pull -U https://github.com/passmore-ris/ansible_pull_config.git -d /opt/ansible --vault-password /opt/.vault-password" -b
 ```
 This may take a long time, so be patient.
 Configuration of the worktations should be done from [this repository](https://github.com/passmore-ris/ansible_pull_config.git). Ad-hoc commands may still be run from the ansible controller.
