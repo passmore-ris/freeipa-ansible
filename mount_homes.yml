@@ -1,6 +1,6 @@
 ---
 - name: Create automount map
-  hosts: ipaserver
+  hosts: ipaservers
   become: true
   gather_facts: true
   vars_files:
