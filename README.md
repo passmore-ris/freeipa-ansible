@@ -52,6 +52,7 @@ ansible-playbook setup_nfs_server.yml
 ```
 ansible-playbook mount_homes.yml
 ```
+Please note that if this command doesn't work the first time and gives the error "**", just re-run it
 
 #### IMPORTANT
 **Remove the nfs server from the list of ipa clients in the hosts.ini file!** If it is reinstalled as an IPA client, the keytab will be reset, and it will be a pain to fix. Comment out the *nfsserver* subgroup in *ipaclients*.

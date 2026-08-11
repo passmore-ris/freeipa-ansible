@@ -1291,3 +1291,944 @@ The offending line appears to be:
 2026-08-11 16:46:28,004 p=18873 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
 2026-08-11 16:46:28,048 p=18873 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
 2026-08-11 16:46:28,048 p=18873 u=ben n=ansible | {{ ipa_server_fqdn }}      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-08-11 16:50:17,091 p=19519 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:50:17,108 p=19519 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 16:50:17,139 p=19519 u=ben n=ansible | playbook: mount_homes.yml
+2026-08-11 16:50:17,743 p=19525 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:50:17,905 p=19525 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:50:17,950 p=19480 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:50:51,201 p=19593 u=ben n=ansible | PLAY [Set up NFS server] *******************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:50:51,215 p=19593 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:50:53,162 p=19593 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 16:50:53,174 p=19593 u=ben n=ansible | TASK [Update repositories] *****************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:02,628 p=19593 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:02,661 p=19593 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:02,683 p=19593 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml)
+2026-08-11 16:51:02,696 p=19593 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:02,749 p=19593 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for nfs.ipa.rischool.ru
+2026-08-11 16:51:02,798 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:02,824 p=19593 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:02,836 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 16:51:02,859 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:02,871 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,023 p=19593 u=ben n=ansible | changed: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,037 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,052 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,064 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,092 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,105 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,121 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,133 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,148 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,160 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,183 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,195 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,219 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,230 p=19593 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:23,255 p=19593 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:51:23,267 p=19593 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:24,546 p=19593 u=ben n=ansible | fatal: [nfs.ipa.rischool.ru]: FAILED! => {"changed": false, "msg": "Unable to find IPA Server to join"}
+2026-08-11 16:51:24,547 p=19593 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:51:24,547 p=19593 u=ben n=ansible | nfs.ipa.rischool.ru        : ok=6    changed=1    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2026-08-11 16:52:17,388 p=19945 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: nfs.ipa.rischool.ru
+
+2026-08-11 16:52:17,403 p=19945 u=ben n=ansible | playbook: setup_nfs_server.yml
+2026-08-11 16:52:17,649 p=19911 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:52:18,327 p=19952 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:52:18,473 p=19952 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:52:18,598 p=19911 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/uninstall.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:53:45,350 p=20020 u=ben n=ansible | PLAY [Set up NFS server] *******************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:45,364 p=20020 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:47,148 p=20020 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:47,160 p=20020 u=ben n=ansible | TASK [Update repositories] *****************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:58,609 p=20020 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:58,644 p=20020 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:58,669 p=20020 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml)
+2026-08-11 16:53:58,688 p=20020 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:58,743 p=20020 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for nfs.ipa.rischool.ru
+2026-08-11 16:53:58,793 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:58,817 p=20020 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:58,829 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 16:53:58,852 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:58,863 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:59,833 p=20020 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:59,846 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:53:59,861 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:59,872 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-08-11 16:53:59,900 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:59,912 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:53:59,928 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:59,940 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:53:59,954 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:53:59,967 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-08-11 16:53:59,991 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:54:00,002 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-08-11 16:54:00,026 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:54:00,039 p=20020 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:54:00,063 p=20020 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 16:54:00,074 p=20020 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:54:00,955 p=20020 u=ben n=ansible | fatal: [nfs.ipa.rischool.ru]: FAILED! => {"changed": false, "msg": "Unable to find IPA Server to join"}
+2026-08-11 16:54:00,956 p=20020 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:54:00,956 p=20020 u=ben n=ansible | nfs.ipa.rischool.ru        : ok=6    changed=0    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2026-08-11 16:54:20,770 p=20238 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: nfs.ipa.rischool.ru
+
+2026-08-11 16:54:20,785 p=20238 u=ben n=ansible | playbook: setup_nfs_server.yml
+2026-08-11 16:54:21,422 p=20244 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:54:21,584 p=20244 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:54:21,775 p=20204 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:54:22,004 p=20204 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/uninstall.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:54:53,149 p=20320 u=ben n=ansiblelint._internal.rules | Ignored exception from JinjaRule.<bound method JinjaRule.matchyaml of jinja: Rule that looks inside jinja2 templates.> while processing vars/secrets.yml (vars): A vault password must be specified to decrypt data in file /home/ben/Repositories/freeipa-ansible/vars/secrets.yml
+2026-08-11 16:54:53,151 p=20320 u=ben n=ansiblelint._internal.rules | Ignored exception from VariableNamingRule.<bound method VariableNamingRule.matchyaml of var-naming: All variables should be named using only lowercase and underscores.> while processing vars/secrets.yml (vars): A vault password must be specified to decrypt data in file /home/ben/Repositories/freeipa-ansible/vars/secrets.yml
+2026-08-11 17:00:10,326 p=20695 u=ben n=ansible | PLAY [Set up NFS server] *******************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:10,340 p=20695 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:11,960 p=20695 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:11,971 p=20695 u=ben n=ansible | TASK [Update repositories] *****************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:21,226 p=20695 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:21,260 p=20695 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:21,282 p=20695 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml)
+2026-08-11 17:00:21,295 p=20695 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:21,347 p=20695 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for nfs.ipa.rischool.ru
+2026-08-11 17:00:21,398 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:21,425 p=20695 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:21,437 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 17:00:21,461 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:21,473 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,355 p=20695 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,368 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,384 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,397 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,426 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,440 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,465 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,478 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,496 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,508 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,533 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,545 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,571 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,583 p=20695 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:22,610 p=20695 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:22,622 p=20695 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:23,508 p=20695 u=ben n=ansible | fatal: [nfs.ipa.rischool.ru]: FAILED! => {"changed": false, "msg": "Unable to find IPA Server to join"}
+2026-08-11 17:00:23,509 p=20695 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:23,510 p=20695 u=ben n=ansible | nfs.ipa.rischool.ru        : ok=6    changed=0    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2026-08-11 17:00:51,511 p=20879 u=ben n=ansible | PLAY [Set up NFS server] *******************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:51,526 p=20879 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:00:52,794 p=20879 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:00:52,807 p=20879 u=ben n=ansible | TASK [Update repositories] *****************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:04,515 p=20879 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:04,553 p=20879 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:04,581 p=20879 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml)
+2026-08-11 17:01:04,595 p=20879 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:04,653 p=20879 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for nfs.ipa.rischool.ru
+2026-08-11 17:01:04,704 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:04,731 p=20879 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:04,746 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 17:01:04,774 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:04,790 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,699 p=20879 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,712 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,728 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,740 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,769 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,782 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,800 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,815 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,830 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,843 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,869 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,881 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,905 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,918 p=20879 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:05,945 p=20879 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru]
+2026-08-11 17:01:05,958 p=20879 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:06,883 p=20879 u=ben n=ansible | fatal: [nfs.ipa.rischool.ru]: FAILED! => {"changed": false, "msg": "Unable to find IPA Server to join"}
+2026-08-11 17:01:06,885 p=20879 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:01:06,885 p=20879 u=ben n=ansible | nfs.ipa.rischool.ru        : ok=6    changed=0    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2026-08-11 17:02:52,474 p=21092 u=ben n=ansible | ansible-playbook [core 2.16.3]
+  config file = /home/ben/Repositories/freeipa-ansible/ansible.cfg
+  configured module search path = ['/home/ben/Repositories/freeipa-ansible/ansible-freeipa/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/ben/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0] (/usr/bin/python3)
+  jinja version = 3.1.2
+  libyaml = True
+2026-08-11 17:02:52,474 p=21092 u=ben n=ansible | Using /home/ben/Repositories/freeipa-ansible/ansible.cfg as config file
+2026-08-11 17:02:52,572 p=21092 u=ben n=ansible | host_list declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:02:52,572 p=21092 u=ben n=ansible | script declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:02:52,572 p=21092 u=ben n=ansible | auto declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:02:52,572 p=21092 u=ben n=ansible | yaml declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:02:52,573 p=21092 u=ben n=ansible | Parsed /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini inventory source with ini plugin
+2026-08-11 17:02:52,663 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,663 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,670 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,670 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,699 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,700 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,708 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,708 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,719 p=21092 u=ben n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2026-08-11 17:02:52,719 p=21092 u=ben n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2026-08-11 17:02:52,719 p=21092 u=ben n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2026-08-11 17:02:52,719 p=21092 u=ben n=ansible | PLAYBOOK: setup_nfs_server.yml *************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:52,719 p=21092 u=ben n=ansible | 1 plays in setup_nfs_server.yml
+2026-08-11 17:02:52,727 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,727 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,735 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,735 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,743 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,744 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,744 p=21092 u=ben n=ansible | PLAY [Set up NFS server] *******************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:52,757 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:52,757 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:52,758 p=21092 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:52,768 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:52,769 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:02:53,133 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:02:53,133 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:53,134 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628 `" && echo ansible-tmp-1786456973.1336474-21111-6846584433628="` echo /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628 `" ) && sleep 0'"'"''
+2026-08-11 17:02:53,178 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786456973.1336474-21111-6846584433628=/root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628\n', b'')
+2026-08-11 17:02:53,324 p=21092 u=ben n=ansible | <nfs.ipa.rischool.ru> Attempting python interpreter discovery
+2026-08-11 17:02:53,324 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:53,324 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.12'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.11'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.8'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+2026-08-11 17:02:53,366 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3.12\n/usr/bin/python3\n/usr/libexec/platform-python\n/usr/bin/python\n/usr/bin/python\nENDFOUND\n', b'')
+2026-08-11 17:02:53,366 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:53,367 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3.12 && sleep 0'"'"''
+2026-08-11 17:02:53,426 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"Rocky Linux\\"\\nVERSION=\\"10.2 (Red Quartz)\\"\\nRELEASE_TYPE=\\"stable\\"\\nID=\\"rocky\\"\\nID_LIKE=\\"rhel centos fedora\\"\\nVERSION_ID=\\"10.2\\"\\nPLATFORM_ID=\\"platform:el10\\"\\nPRETTY_NAME=\\"Rocky Linux 10.2 (Red Quartz)\\"\\nANSI_COLOR=\\"0;32\\"\\nLOGO=\\"fedora-logo-icon\\"\\nCPE_NAME=\\"cpe:/o:rocky:rocky:10::baseos\\"\\nHOME_URL=\\"https://rockylinux.org/\\"\\nVENDOR_NAME=\\"RESF\\"\\nVENDOR_URL=\\"https://resf.org/\\"\\nBUG_REPORT_URL=\\"https://bugs.rockylinux.org/\\"\\nSUPPORT_END=\\"2035-05-31\\"\\nROCKY_SUPPORT_PRODUCT=\\"Rocky-Linux-10\\"\\nROCKY_SUPPORT_PRODUCT_VERSION=\\"10.2\\"\\nREDHAT_SUPPORT_PRODUCT=\\"Rocky Linux\\"\\nREDHAT_SUPPORT_PRODUCT_VERSION=\\"10.2\\"\\n"}\n', b'')
+2026-08-11 17:02:53,427 p=21092 u=ben n=ansible | Using module file /usr/lib/python3/dist-packages/ansible/modules/setup.py
+2026-08-11 17:02:53,427 p=21092 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmpvekhnku5 TO /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628/AnsiballZ_setup.py
+2026-08-11 17:02:53,427 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:02:53,577 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmpvekhnku5 /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628/AnsiballZ_setup.py\n', b'')
+2026-08-11 17:02:53,577 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:53,578 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628/ /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628/AnsiballZ_setup.py && sleep 0'"'"''
+2026-08-11 17:02:53,618 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:02:53,618 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:53,619 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628/AnsiballZ_setup.py && sleep 0'"'"''
+2026-08-11 17:02:54,299 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'\r\n{"ansible_facts": {"ansible_virtualization_role": "guest", "ansible_virtualization_type": "kvm", "ansible_virtualization_tech_guest": ["kvm"], "ansible_virtualization_tech_host": ["kvm"], "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_lsb": {}, "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "Super User", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_local": {}, "ansible_system": "Linux", "ansible_kernel": "6.12.0-211.44.1.el10_2.x86_64", "ansible_kernel_version": "#1 SMP PREEMPT_DYNAMIC Fri Aug  7 18:55:11 UTC 2026", "ansible_machine": "x86_64", "ansible_python_version": "3.12.13", "ansible_fqdn": "nfs.ipa.rischool.ru", "ansible_hostname": "nfs", "ansible_nodename": "nfs.ipa.rischool.ru", "ansible_domain": "ipa.rischool.ru", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "0eb81b101f8e4c44b03145ef2cb67f45", "ansible_distribution": "Rocky", "ansible_distribution_release": "Red Quartz", "ansible_distribution_version": "10.2", "ansible_distribution_major_version": "10", "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_file_parsed": true, "ansible_os_family": "RedHat", "ansible_date_time": {"year": "2026", "month": "08", "weekday": "Tuesday", "weekday_number": "2", "weeknumber": "32", "day": "11", "hour": "17", "minute": "02", "second": "53", "epoch": "1786456973", "epoch_int": "1786456973", "date": "2026-08-11", "time": "17:02:53", "iso8601_micro": "2026-08-11T14:02:53.886195Z", "iso8601": "2026-08-11T14:02:53Z", "iso8601_basic": "20260811T170253886195", "iso8601_basic_short": "20260811T170253", "tz": "MSK", "tz_dst": "MSK", "tz_offset": "+0300"}, "ansible_python": {"version": {"major": 3, "minor": 12, "micro": 13, "releaselevel": "final", "serial": 0}, "version_info": [3, 12, 13, "final", 0], "executable": "/usr/bin/python3", "has_sslcontext": true, "type": "cpython"}, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) E-2136 CPU @ 3.30GHz", "1", "GenuineIntel", "Intel(R) Xeon(R) E-2136 CPU @ 3.30GHz"], "ansible_processor_count": 1, "ansible_processor_cores": 2, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 2, "ansible_processor_nproc": 2, "ansible_memtotal_mb": 3653, "ansible_memfree_mb": 2820, "ansible_swaptotal_mb": 4039, "ansible_swapfree_mb": 4039, "ansible_memory_mb": {"real": {"total": 3653, "used": 833, "free": 2820}, "nocache": {"free": 3294, "used": 359}, "swap": {"total": 4039, "free": 4039, "used": 0, "cached": 0}}, "ansible_bios_date": "04/01/2014", "ansible_bios_vendor": "SeaBIOS", "ansible_bios_version": "rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org", "ansible_board_asset_tag": "NA", "ansible_board_name": "NA", "ansible_board_serial": "NA", "ansible_board_vendor": "NA", "ansible_board_version": "NA", "ansible_chassis_asset_tag": "NA", "ansible_chassis_serial": "NA", "ansible_chassis_vendor": "QEMU", "ansible_chassis_version": "pc-i440fx-11.0", "ansible_form_factor": "Other", "ansible_product_name": "Standard PC (i440FX + PIIX, 1996)", "ansible_product_serial": "NA", "ansible_product_uuid": "3088aa07-deb2-4e38-9196-1e812e148f35", "ansible_product_version": "pc-i440fx-11.0", "ansible_system_vendor": "QEMU", "ansible_devices": {"dm-1": {"virtual": 1, "links": {"ids": ["dm-name-rl-swap", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAW2kPfLd12vbwlcCljvw2UF6695uhLHdN"], "uuids": ["5f868530-cc1b-4226-a7fd-5fb8f02ef339"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "1", "scheduler_mode": "", "sectors": "8273920", "sectorsize": "512", "size": "3.95 GB", "host": "", "holders": []}, "sr0": {"virtual": 1, "links": {"ids": ["ata-QEMU_DVD-ROM_QM00003"], "uuids": ["2025-11-14-18-42-09-00"], "labels": ["Rocky-10-1-x86_64-dvd"], "masters": []}, "vendor": "QEMU", "model": "QEMU DVD-ROM", "sas_address": null, "sas_device_handle": null, "removable": "1", "support_discard": "2048", "partitions": {}, "rotational": "1", "scheduler_mode": "mq-deadline", "sectors": "18121344", "sectorsize": "2048", "size": "8.64 GB", "host": "IDE interface: Intel Corporation 82371SB PIIX3 IDE [Natoma/Triton II]", "holders": []}, "dm-2": {"virtual": 1, "links": {"ids": ["dm-name-rl-home", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pASWeR6dDXRcsiy37Lrq0V9u1Llkcmd0uN"], "uuids": ["c6972874-b5dd-4f3d-b9b0-9418c8acb28d"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "1", "scheduler_mode": "", "sectors": "65396736", "sectorsize": "512", "size": "31.18 GB", "host": "", "holders": []}, "dm-0": {"virtual": 1, "links": {"ids": ["dm-name-rl-root", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAlSWhER9j8dig4r3PE8T862cSl0VBMzqS"], "uuids": ["8a781fa1-b597-4b3e-b604-65d53850cba4"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "1", "scheduler_mode": "", "sectors": "133939200", "sectorsize": "512", "size": "63.87 GB", "host": "", "holders": []}, "sda": {"virtual": 1, "links": {"ids": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0"], "uuids": [], "labels": [], "masters": []}, "vendor": "QEMU", "model": "QEMU HARDDISK", "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {"sda2": {"links": {"ids": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part2"], "uuids": ["10612842-6746-4dec-a759-989023d384f7"], "labels": [], "masters": []}, "start": "4096", "sectors": "2097152", "sectorsize": 512, "size": "1.00 GB", "uuid": "10612842-6746-4dec-a759-989023d384f7", "holders": []}, "sda3": {"links": {"ids": ["lvm-pv-uuid-f6H11z-1RED-bdrv-oOuI-BqP1-NYuv-X9cMX3", "scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part3"], "uuids": [], "labels": [], "masters": ["dm-0", "dm-1", "dm-2"]}, "start": "2101248", "sectors": "207611904", "sectorsize": 512, "size": "99.00 GB", "uuid": null, "holders": ["rl-swap", "rl-home", "rl-root"]}, "sda1": {"links": {"ids": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part1"], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectors": "2048", "sectorsize": 512, "size": "1.00 MB", "uuid": null, "holders": []}}, "rotational": "1", "scheduler_mode": "none", "sectors": "209715200", "sectorsize": "512", "size": "100.00 GB", "host": "SCSI storage controller: Red Hat, Inc. Virtio SCSI", "holders": []}}, "ansible_device_links": {"ids": {"sda": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0"], "sda1": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part1"], "sda3": ["lvm-pv-uuid-f6H11z-1RED-bdrv-oOuI-BqP1-NYuv-X9cMX3", "scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part3"], "sda2": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part2"], "sr0": ["ata-QEMU_DVD-ROM_QM00003"], "dm-0": ["dm-name-rl-root", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAlSWhER9j8dig4r3PE8T862cSl0VBMzqS"], "dm-1": ["dm-name-rl-swap", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAW2kPfLd12vbwlcCljvw2UF6695uhLHdN"], "dm-2": ["dm-name-rl-home", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pASWeR6dDXRcsiy37Lrq0V9u1Llkcmd0uN"]}, "uuids": {"sda2": ["10612842-6746-4dec-a759-989023d384f7"], "sr0": ["2025-11-14-18-42-09-00"], "dm-0": ["8a781fa1-b597-4b3e-b604-65d53850cba4"], "dm-1": ["5f868530-cc1b-4226-a7fd-5fb8f02ef339"], "dm-2": ["c6972874-b5dd-4f3d-b9b0-9418c8acb28d"]}, "labels": {"sr0": ["Rocky-10-1-x86_64-dvd"]}, "masters": {"sda3": ["dm-0", "dm-1", "dm-2"]}}, "ansible_uptime_seconds": 1720, "ansible_lvm": {"lvs": {"home": {"size_g": "31.18", "vg": "rl"}, "root": {"size_g": "63.87", "vg": "rl"}, "swap": {"size_g": "3.95", "vg": "rl"}}, "vgs": {"rl": {"size_g": "99.00", "free_g": "0", "num_lvs": "3", "num_pvs": "1"}}, "pvs": {"/dev/sda3": {"size_g": "99.00", "free_g": "0", "vg": "rl"}}}, "ansible_mounts": [{"mount": "/", "device": "/dev/mapper/rl-root", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 68509761536, "size_available": 64839442432, "block_size": 4096, "block_total": 16726016, "block_available": 15829942, "block_used": 896074, "inode_total": 33484800, "inode_available": 33402254, "inode_used": 82546, "uuid": "8a781fa1-b597-4b3e-b604-65d53850cba4"}, {"mount": "/home", "device": "/dev/mapper/rl-home", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 33416019968, "size_available": 32742256640, "block_size": 4096, "block_total": 8158208, "block_available": 7993715, "block_used": 164493, "inode_total": 16349184, "inode_available": 16349176, "inode_used": 8, "uuid": "c6972874-b5dd-4f3d-b9b0-9418c8acb28d"}, {"mount": "/boot", "device": "/dev/sda2", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 1006632960, "size_available": 509583360, "block_size": 4096, "block_total": 245760, "block_available": 124410, "block_used": 121350, "inode_total": 524288, "inode_available": 523918, "inode_used": 370, "uuid": "10612842-6746-4dec-a759-989023d384f7"}], "ansible_is_chroot": false, "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDHW22Q1QJC7DsZtG7rAkJUETkT5mP9Az2WnH75JajMecNlBH3TIL5GTK4sKjFrcLevik91SvNBxSzu0a9wT1URG1EY6txBsHeJFFiAl6NXp8bsS8wzfJ8mhwGAr/vHXBIrv40YU1B5m/nJC23/qZ0+mkPZMGqD617Nfh0r8BfhETqk2DGQOY/CF1BaEonlzYTFsEhoNjFT6eRWS/VBFxO2+NkLx7da8WLsJndFdaCziDQl/pWD6RdKMtmFbaete4wTOfs2MMNbUsfqKO3i1Q0Ie932XOWYktKj/rqblFc1EA8EVlksP5nt5dKyoe3ui1N2P5edxscY+r3w6/8uQos4Jzo9OKfH8YQgzNHwrOjmYQ5/Ga9C0Dln8YqM7v4mdFvw49DnOT706oLEyS+6dPSZfFeAdfYy00L+TG18hSng+dcUkJptIUr1kVu9AMdFSZvqSOtUqYkO6fAHFlIDHDDb5cfRnBCg447v/LL+I8YLD7euVX4JcQCLvQfxE2ME4zE=", "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIGYJiz97Ilzp87gCcC86s0zRwVFi6PqL5wtZdjOWR45AomJwBm6HRnzzBlJVyNt5aLTV5HG8YkQzMvtNizi9G8=", "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIOY+SUV0H8Io/BSFGSPMKl061MPZF5CRysOwoQK42GIG", "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519", "ansible_dns": {"search": ["ipa.rischool.ru"], "nameservers": ["192.168.88.1", "8.8.8.8", "77.88.8.8"]}, "ansible_fips": false, "ansible_interfaces": ["ens18", "lo"], "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "", "netmask": "255.0.0.0", "network": "127.0.0.0", "prefix": "8"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_ens18": {"device": "ens18", "macaddress": "bc:24:11:74:74:cb", "mtu": 1500, "active": true, "module": "virtio_net", "type": "ether", "pciid": "virtio1", "speed": -1, "promisc": false, "ipv4": {"address": "192.168.88.210", "broadcast": "192.168.88.255", "netmask": "255.255.255.0", "network": "192.168.88.0", "prefix": "24"}, "ipv6": [{"address": "fe80::be24:11ff:fe74:74cb", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "on [fixed]", "vlan_challenged": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "on", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "192.168.88.1", "interface": "ens18", "address": "192.168.88.210", "broadcast": "192.168.88.255", "netmask": "255.255.255.0", "network": "192.168.88.0", "prefix": "24", "macaddress": "bc:24:11:74:74:cb", "mtu": 1500, "type": "ether", "alias": "ens18"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["192.168.88.210"], "ansible_all_ipv6_addresses": ["fe80::be24:11ff:fe74:74cb"], "ansible_locally_reachable_ips": {"ipv4": ["127.0.0.0/8", "127.0.0.1", "192.168.88.210"], "ipv6": ["::1", "fe80::be24:11ff:fe74:74cb"]}, "ansible_hostnqn": "nqn.2014-08.org.nvmexpress:uuid:3088aa07-deb2-4e38-9196-1e812e148f35", "ansible_selinux_python_present": true, "ansible_selinux": {"status": "enabled", "policyvers": 33, "config_mode": "enforcing", "mode": "enforcing", "type": "targeted"}, "ansible_fibre_channel_wwn": [], "ansible_pkg_mgr": "dnf", "ansible_env": {"SHELL": "/bin/bash", "GPG_TTY": "/dev/pts/0", "PWD": "/root", "LOGNAME": "root", "XDG_SESSION_TYPE": "tty", "_": "/usr/bin/python3", "MOTD_SHOWN": "pam", "HOME": "/root", "LANG": "en_US.UTF-8", "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:", "SSH_CONNECTION": "192.168.88.155 44340 192.168.88.210 22", "XDG_SESSION_CLASS": "user", "SELINUX_ROLE_REQUESTED": "", "TERM": "xterm-256color", "LESSOPEN": "||/usr/bin/lesspipe.sh %s", "USER": "root", "SELINUX_USE_CURRENT_RANGE": "", "SHLVL": "1", "XDG_SESSION_ID": "10", "XDG_RUNTIME_DIR": "/run/user/0", "SSH_CLIENT": "192.168.88.155 44340 22", "DEBUGINFOD_IMA_CERT_PATH": "/etc/keys/ima:", "PATH": "/root/.local/bin:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin", "SELINUX_LEVEL_REQUESTED": "", "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus", "SSH_TTY": "/dev/pts/0"}, "ansible_iscsi_iqn": "", "ansible_cmdline": {"BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-6.12.0-211.44.1.el10_2.x86_64", "root": "/dev/mapper/rl-root", "ro": true, "crashkernel": "2G-64G:256M,64G-:512M", "resume": "UUID=5f868530-cc1b-4226-a7fd-5fb8f02ef339", "rd.lvm.lv": "rl/swap", "rhgb": true, "quiet": true}, "ansible_proc_cmdline": {"BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-6.12.0-211.44.1.el10_2.x86_64", "root": "/dev/mapper/rl-root", "ro": true, "crashkernel": "2G-64G:256M,64G-:512M", "resume": "UUID=5f868530-cc1b-4226-a7fd-5fb8f02ef339", "rd.lvm.lv": ["rl/root", "rl/swap"], "rhgb": true, "quiet": true}, "ansible_apparmor": {"status": "disabled"}, "ansible_loadavg": {"1m": 0.2197265625, "5m": 0.0947265625, "15m": 0.06689453125}, "ansible_service_mgr": "systemd", "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": [], "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:02:54,301 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:54,302 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786456973.1336474-21111-6846584433628/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:02:54,343 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:02:54,352 p=21092 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:02:54,364 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:54,365 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:54,366 p=21092 u=ben n=ansible | TASK [Update repositories] *****************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:54,381 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:54,381 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:02:54,423 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:02:54,423 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:54,423 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544 `" && echo ansible-tmp-1786456974.4233935-21137-191154853369544="` echo /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544 `" ) && sleep 0'"'"''
+2026-08-11 17:02:54,466 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786456974.4233935-21137-191154853369544=/root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544\n', b'')
+2026-08-11 17:02:54,559 p=21092 u=ben n=ansible | Using module file /usr/lib/python3/dist-packages/ansible/modules/dnf.py
+2026-08-11 17:02:54,559 p=21092 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmpwcns1jle TO /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544/AnsiballZ_dnf.py
+2026-08-11 17:02:54,559 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:02:54,709 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmpwcns1jle /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544/AnsiballZ_dnf.py\n', b'')
+2026-08-11 17:02:54,709 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:54,710 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544/ /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:02:54,751 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:02:54,751 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:54,751 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:02:59,291 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'\r\n{"msg": "Cache updated", "changed": false, "results": [], "rc": 0, "invocation": {"module_args": {"update_cache": true, "allow_downgrade": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_repoquery": true, "install_weak_deps": true, "name": [], "security": false, "skip_broken": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "allowerasing": false, "nobest": false, "use_backend": "auto", "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "releasever": null, "state": null}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:02:59,292 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:59,292 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786456974.4233935-21137-191154853369544/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:02:59,334 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:02:59,336 p=21092 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [],
+            "nobest": false,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": null,
+            "update_cache": true,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "Cache updated",
+    "rc": 0,
+    "results": []
+}
+2026-08-11 17:02:59,348 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,349 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,359 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,359 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,370 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,371 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,372 p=21092 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:59,394 p=21092 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml) => {
+    "ansible_facts": {
+        "ipaclient_packages": [
+            "ipa-client",
+            "python3-libselinux"
+        ],
+        "ipaclient_packages_dot": [
+            "ipa-client-encrypted-dns"
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml"
+    ],
+    "ansible_loop_var": "item",
+    "changed": false,
+    "item": "/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml"
+}
+2026-08-11 17:02:59,405 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,406 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,406 p=21092 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:59,442 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,442 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,461 p=21092 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for nfs.ipa.rischool.ru
+2026-08-11 17:02:59,469 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,469 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,477 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,477 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,486 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,486 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,494 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,494 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,502 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,502 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,513 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,513 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,514 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:59,542 p=21092 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => {
+    "ansible_facts": {
+        "_ipapackages": [
+            "ipa-client",
+            "python3-libselinux"
+        ]
+    },
+    "changed": false
+}
+2026-08-11 17:02:59,559 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,559 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,560 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 17:02:59,587 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_dns_over_tls | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:02:59,599 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:02:59,599 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:02:59,600 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 17:02:59,628 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:59,629 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:02:59,669 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:02:59,669 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:59,670 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598 `" && echo ansible-tmp-1786456979.6695685-21182-272079396973598="` echo /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598 `" ) && sleep 0'"'"''
+2026-08-11 17:02:59,715 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786456979.6695685-21182-272079396973598=/root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598\n', b'')
+2026-08-11 17:02:59,716 p=21092 u=ben n=ansible | Using module file /usr/lib/python3/dist-packages/ansible/modules/dnf.py
+2026-08-11 17:02:59,716 p=21092 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmp29jj55ow TO /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598/AnsiballZ_dnf.py
+2026-08-11 17:02:59,716 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:02:59,845 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmp29jj55ow /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598/AnsiballZ_dnf.py\n', b'')
+2026-08-11 17:02:59,845 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:59,846 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598/ /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:02:59,887 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:02:59,887 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:02:59,887 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:03:00,509 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'\r\n{"msg": "Nothing to do", "changed": false, "results": [], "rc": 0, "invocation": {"module_args": {"name": ["ipa-client", "python3-libselinux"], "state": "present", "allow_downgrade": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_repoquery": true, "install_weak_deps": true, "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "allowerasing": false, "nobest": false, "use_backend": "auto", "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "releasever": null}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:03:00,509 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:03:00,509 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786456979.6695685-21182-272079396973598/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:03:00,554 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:03:00,556 p=21092 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "ipa-client",
+                "python3-libselinux"
+            ],
+            "nobest": false,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+2026-08-11 17:03:00,566 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,566 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,567 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,581 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "groups.ipaservers is defined and ipaclient_servers is not defined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:03:00,592 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,593 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,593 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,622 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_no_dns_lookup | bool and groups.ipaserver is defined and ipaclient_servers is not defined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:03:00,634 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,634 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,635 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,650 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaadmin_keytab is defined and ipaadmin_password is defined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:03:00,662 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,662 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,662 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,677 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaadmin_principal is undefined and ipaclient_keytab is undefined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:03:00,689 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,689 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,689 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,714 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_configure_dns_resolver | bool and not ipaclient_on_master | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:03:00,725 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,725 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,725 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,750 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_configure_dns_resolver | bool and not ipaclient_on_master | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:03:00,762 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,763 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,763 p=21092 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,787 p=21092 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_configure_dns_resolver | bool and not ipaclient_on_master | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:03:00,798 p=21092 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:03:00,798 p=21092 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:03:00,799 p=21092 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 17:03:00,832 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:03:00,833 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:03:00,874 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:03:00,874 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:03:00,875 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683 `" && echo ansible-tmp-1786456980.8747594-21197-207358274961683="` echo /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683 `" ) && sleep 0'"'"''
+2026-08-11 17:03:00,921 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786456980.8747594-21197-207358274961683=/root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683\n', b'')
+2026-08-11 17:03:01,001 p=21092 u=ben n=ansible | Using module file /home/ben/Repositories/freeipa-ansible/roles/ipaclient/library/ipaclient_test.py
+2026-08-11 17:03:01,001 p=21092 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmpky4sh64l TO /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683/AnsiballZ_ipaclient_test.py
+2026-08-11 17:03:01,002 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:03:01,127 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21092fw99qylg/tmpky4sh64l /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683/AnsiballZ_ipaclient_test.py\n', b'')
+2026-08-11 17:03:01,128 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:03:01,128 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683/ /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683/AnsiballZ_ipaclient_test.py && sleep 0'"'"''
+2026-08-11 17:03:01,169 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:03:01,170 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:03:01,170 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683/AnsiballZ_ipaclient_test.py && sleep 0'"'"''
+2026-08-11 17:03:01,649 p=21092 u=ben n=ansible | <192.168.88.210> (1, b'\r\n{"failed": true, "msg": "Unable to find IPA Server to join", "exception": "  File \\"/tmp/ansible_ipaclient_test_payload_4xxj574d/ansible_ipaclient_test_payload.zip/ansible/modules/ipaclient_test.py\\", line 785, in main\\n    raise ScriptError(\\n", "invocation": {"module_args": {"domain": "ipa.rischool.ru", "realm": "IPA.RISCHOOL.RU", "hostname": "nfs.ipa.rischool.ru", "no_ntp": false, "force_ntpd": false, "no_nisdomain": false, "kinit_attempts": 5, "configure_firefox": false, "all_ip_addresses": true, "on_master": false, "dns_over_tls": false, "no_dnssec_validation": false, "enable_dns_updates": true, "servers": null, "ntp_servers": null, "ntp_pool": null, "nisdomain": null, "ca_cert_files": null, "firefox_dir": null, "ip_addresses": null}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:03:01,649 p=21092 u=ben n=ansible | <192.168.88.210> Failed to connect to the host via ssh: Shared connection to 192.168.88.210 closed.
+2026-08-11 17:03:01,649 p=21092 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:03:01,650 p=21092 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786456980.8747594-21197-207358274961683/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:03:01,692 p=21092 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:03:01,693 p=21092 u=ben n=ansible | The full traceback is:
+  File "/tmp/ansible_ipaclient_test_payload_4xxj574d/ansible_ipaclient_test_payload.zip/ansible/modules/ipaclient_test.py", line 785, in main
+    raise ScriptError(
+
+2026-08-11 17:03:01,693 p=21092 u=ben n=ansible | fatal: [nfs.ipa.rischool.ru]: FAILED! => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "all_ip_addresses": true,
+            "ca_cert_files": null,
+            "configure_firefox": false,
+            "dns_over_tls": false,
+            "domain": "ipa.rischool.ru",
+            "enable_dns_updates": true,
+            "firefox_dir": null,
+            "force_ntpd": false,
+            "hostname": "nfs.ipa.rischool.ru",
+            "ip_addresses": null,
+            "kinit_attempts": 5,
+            "nisdomain": null,
+            "no_dnssec_validation": false,
+            "no_nisdomain": false,
+            "no_ntp": false,
+            "ntp_pool": null,
+            "ntp_servers": null,
+            "on_master": false,
+            "realm": "IPA.RISCHOOL.RU",
+            "servers": null
+        }
+    },
+    "msg": "Unable to find IPA Server to join"
+}
+2026-08-11 17:03:01,694 p=21092 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:03:01,695 p=21092 u=ben n=ansible | nfs.ipa.rischool.ru        : ok=6    changed=0    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
+2026-08-11 17:04:39,791 p=21288 u=ben n=ansible | ansible-playbook [core 2.16.3]
+  config file = /home/ben/Repositories/freeipa-ansible/ansible.cfg
+  configured module search path = ['/home/ben/Repositories/freeipa-ansible/ansible-freeipa/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/ben/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0] (/usr/bin/python3)
+  jinja version = 3.1.2
+  libyaml = True
+2026-08-11 17:04:39,791 p=21288 u=ben n=ansible | Using /home/ben/Repositories/freeipa-ansible/ansible.cfg as config file
+2026-08-11 17:04:39,867 p=21288 u=ben n=ansible | host_list declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:04:39,867 p=21288 u=ben n=ansible | script declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:04:39,867 p=21288 u=ben n=ansible | auto declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:04:39,868 p=21288 u=ben n=ansible | yaml declined parsing /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini as it did not pass its verify_file() method
+2026-08-11 17:04:39,869 p=21288 u=ben n=ansible | Parsed /home/ben/Repositories/freeipa-ansible/inventory/hosts.ini inventory source with ini plugin
+2026-08-11 17:04:39,959 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:39,959 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:39,966 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:39,967 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:39,994 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:39,995 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:40,002 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:40,003 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:40,013 p=21288 u=ben n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2026-08-11 17:04:40,013 p=21288 u=ben n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2026-08-11 17:04:40,014 p=21288 u=ben n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2026-08-11 17:04:40,014 p=21288 u=ben n=ansible | PLAYBOOK: setup_nfs_server.yml *************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:40,014 p=21288 u=ben n=ansible | 1 plays in setup_nfs_server.yml
+2026-08-11 17:04:40,021 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:40,022 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:40,029 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:40,030 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:40,037 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:40,038 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:40,038 p=21288 u=ben n=ansible | PLAY [Set up NFS server] *******************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:40,051 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:40,051 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:40,053 p=21288 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:40,063 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:40,063 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:04:40,419 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:04:40,419 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:40,419 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291 `" && echo ansible-tmp-1786457080.4191668-21308-103112560351291="` echo /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291 `" ) && sleep 0'"'"''
+2026-08-11 17:04:40,464 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786457080.4191668-21308-103112560351291=/root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291\n', b'')
+2026-08-11 17:04:40,609 p=21288 u=ben n=ansible | <nfs.ipa.rischool.ru> Attempting python interpreter discovery
+2026-08-11 17:04:40,609 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:40,609 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.12'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.11'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.8'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+2026-08-11 17:04:40,650 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'PLATFORM\nLinux\nFOUND\n/usr/bin/python3.12\n/usr/bin/python3\n/usr/libexec/platform-python\n/usr/bin/python\n/usr/bin/python\nENDFOUND\n', b'')
+2026-08-11 17:04:40,651 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:40,651 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3.12 && sleep 0'"'"''
+2026-08-11 17:04:40,713 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'{"platform_dist_result": [], "osrelease_content": "NAME=\\"Rocky Linux\\"\\nVERSION=\\"10.2 (Red Quartz)\\"\\nRELEASE_TYPE=\\"stable\\"\\nID=\\"rocky\\"\\nID_LIKE=\\"rhel centos fedora\\"\\nVERSION_ID=\\"10.2\\"\\nPLATFORM_ID=\\"platform:el10\\"\\nPRETTY_NAME=\\"Rocky Linux 10.2 (Red Quartz)\\"\\nANSI_COLOR=\\"0;32\\"\\nLOGO=\\"fedora-logo-icon\\"\\nCPE_NAME=\\"cpe:/o:rocky:rocky:10::baseos\\"\\nHOME_URL=\\"https://rockylinux.org/\\"\\nVENDOR_NAME=\\"RESF\\"\\nVENDOR_URL=\\"https://resf.org/\\"\\nBUG_REPORT_URL=\\"https://bugs.rockylinux.org/\\"\\nSUPPORT_END=\\"2035-05-31\\"\\nROCKY_SUPPORT_PRODUCT=\\"Rocky-Linux-10\\"\\nROCKY_SUPPORT_PRODUCT_VERSION=\\"10.2\\"\\nREDHAT_SUPPORT_PRODUCT=\\"Rocky Linux\\"\\nREDHAT_SUPPORT_PRODUCT_VERSION=\\"10.2\\"\\n"}\n', b'')
+2026-08-11 17:04:40,714 p=21288 u=ben n=ansible | Using module file /usr/lib/python3/dist-packages/ansible/modules/setup.py
+2026-08-11 17:04:40,714 p=21288 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmpotjroc7b TO /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291/AnsiballZ_setup.py
+2026-08-11 17:04:40,715 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:04:40,854 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmpotjroc7b /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291/AnsiballZ_setup.py\n', b'')
+2026-08-11 17:04:40,854 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:40,854 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291/ /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291/AnsiballZ_setup.py && sleep 0'"'"''
+2026-08-11 17:04:40,898 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:40,898 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:40,898 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291/AnsiballZ_setup.py && sleep 0'"'"''
+2026-08-11 17:04:41,587 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'\r\n{"ansible_facts": {"ansible_system": "Linux", "ansible_kernel": "6.12.0-211.44.1.el10_2.x86_64", "ansible_kernel_version": "#1 SMP PREEMPT_DYNAMIC Fri Aug  7 18:55:11 UTC 2026", "ansible_machine": "x86_64", "ansible_python_version": "3.12.13", "ansible_fqdn": "nfs.ipa.rischool.ru", "ansible_hostname": "nfs", "ansible_nodename": "nfs.ipa.rischool.ru", "ansible_domain": "ipa.rischool.ru", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "0eb81b101f8e4c44b03145ef2cb67f45", "ansible_selinux_python_present": true, "ansible_selinux": {"status": "enabled", "policyvers": 33, "config_mode": "enforcing", "mode": "enforcing", "type": "targeted"}, "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "Super User", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_distribution": "Rocky", "ansible_distribution_release": "Red Quartz", "ansible_distribution_version": "10.2", "ansible_distribution_major_version": "10", "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_file_parsed": true, "ansible_os_family": "RedHat", "ansible_apparmor": {"status": "disabled"}, "ansible_virtualization_role": "guest", "ansible_virtualization_type": "kvm", "ansible_virtualization_tech_guest": ["kvm"], "ansible_virtualization_tech_host": ["kvm"], "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDHW22Q1QJC7DsZtG7rAkJUETkT5mP9Az2WnH75JajMecNlBH3TIL5GTK4sKjFrcLevik91SvNBxSzu0a9wT1URG1EY6txBsHeJFFiAl6NXp8bsS8wzfJ8mhwGAr/vHXBIrv40YU1B5m/nJC23/qZ0+mkPZMGqD617Nfh0r8BfhETqk2DGQOY/CF1BaEonlzYTFsEhoNjFT6eRWS/VBFxO2+NkLx7da8WLsJndFdaCziDQl/pWD6RdKMtmFbaete4wTOfs2MMNbUsfqKO3i1Q0Ie932XOWYktKj/rqblFc1EA8EVlksP5nt5dKyoe3ui1N2P5edxscY+r3w6/8uQos4Jzo9OKfH8YQgzNHwrOjmYQ5/Ga9C0Dln8YqM7v4mdFvw49DnOT706oLEyS+6dPSZfFeAdfYy00L+TG18hSng+dcUkJptIUr1kVu9AMdFSZvqSOtUqYkO6fAHFlIDHDDb5cfRnBCg447v/LL+I8YLD7euVX4JcQCLvQfxE2ME4zE=", "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIGYJiz97Ilzp87gCcC86s0zRwVFi6PqL5wtZdjOWR45AomJwBm6HRnzzBlJVyNt5aLTV5HG8YkQzMvtNizi9G8=", "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIOY+SUV0H8Io/BSFGSPMKl061MPZF5CRysOwoQK42GIG", "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519", "ansible_env": {"SHELL": "/bin/bash", "GPG_TTY": "/dev/pts/0", "PWD": "/root", "LOGNAME": "root", "XDG_SESSION_TYPE": "tty", "_": "/usr/bin/python3", "MOTD_SHOWN": "pam", "HOME": "/root", "LANG": "en_US.UTF-8", "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.7z=01;31:*.ace=01;31:*.alz=01;31:*.apk=01;31:*.arc=01;31:*.arj=01;31:*.bz=01;31:*.bz2=01;31:*.cab=01;31:*.cpio=01;31:*.crate=01;31:*.deb=01;31:*.drpm=01;31:*.dwm=01;31:*.dz=01;31:*.ear=01;31:*.egg=01;31:*.esd=01;31:*.gz=01;31:*.jar=01;31:*.lha=01;31:*.lrz=01;31:*.lz=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.lzo=01;31:*.pyz=01;31:*.rar=01;31:*.rpm=01;31:*.rz=01;31:*.sar=01;31:*.swm=01;31:*.t7z=01;31:*.tar=01;31:*.taz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tgz=01;31:*.tlz=01;31:*.txz=01;31:*.tz=01;31:*.tzo=01;31:*.tzst=01;31:*.udeb=01;31:*.war=01;31:*.whl=01;31:*.wim=01;31:*.xz=01;31:*.z=01;31:*.zip=01;31:*.zoo=01;31:*.zst=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:", "SSH_CONNECTION": "192.168.88.155 35762 192.168.88.210 22", "XDG_SESSION_CLASS": "user", "SELINUX_ROLE_REQUESTED": "", "TERM": "xterm-256color", "LESSOPEN": "||/usr/bin/lesspipe.sh %s", "USER": "root", "SELINUX_USE_CURRENT_RANGE": "", "SHLVL": "1", "XDG_SESSION_ID": "11", "XDG_RUNTIME_DIR": "/run/user/0", "SSH_CLIENT": "192.168.88.155 35762 22", "DEBUGINFOD_IMA_CERT_PATH": "/etc/keys/ima:", "PATH": "/root/.local/bin:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin", "SELINUX_LEVEL_REQUESTED": "", "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus", "SSH_TTY": "/dev/pts/0"}, "ansible_is_chroot": false, "ansible_processor": ["0", "GenuineIntel", "Intel(R) Xeon(R) E-2136 CPU @ 3.30GHz", "1", "GenuineIntel", "Intel(R) Xeon(R) E-2136 CPU @ 3.30GHz"], "ansible_processor_count": 1, "ansible_processor_cores": 2, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 2, "ansible_processor_nproc": 2, "ansible_memtotal_mb": 3653, "ansible_memfree_mb": 2825, "ansible_swaptotal_mb": 4039, "ansible_swapfree_mb": 4039, "ansible_memory_mb": {"real": {"total": 3653, "used": 828, "free": 2825}, "nocache": {"free": 3299, "used": 354}, "swap": {"total": 4039, "free": 4039, "used": 0, "cached": 0}}, "ansible_bios_date": "04/01/2014", "ansible_bios_vendor": "SeaBIOS", "ansible_bios_version": "rel-1.17.0-0-gb52ca86e094d-prebuilt.qemu.org", "ansible_board_asset_tag": "NA", "ansible_board_name": "NA", "ansible_board_serial": "NA", "ansible_board_vendor": "NA", "ansible_board_version": "NA", "ansible_chassis_asset_tag": "NA", "ansible_chassis_serial": "NA", "ansible_chassis_vendor": "QEMU", "ansible_chassis_version": "pc-i440fx-11.0", "ansible_form_factor": "Other", "ansible_product_name": "Standard PC (i440FX + PIIX, 1996)", "ansible_product_serial": "NA", "ansible_product_uuid": "3088aa07-deb2-4e38-9196-1e812e148f35", "ansible_product_version": "pc-i440fx-11.0", "ansible_system_vendor": "QEMU", "ansible_devices": {"dm-1": {"virtual": 1, "links": {"ids": ["dm-name-rl-swap", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAW2kPfLd12vbwlcCljvw2UF6695uhLHdN"], "uuids": ["5f868530-cc1b-4226-a7fd-5fb8f02ef339"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "1", "scheduler_mode": "", "sectors": "8273920", "sectorsize": "512", "size": "3.95 GB", "host": "", "holders": []}, "sr0": {"virtual": 1, "links": {"ids": ["ata-QEMU_DVD-ROM_QM00003"], "uuids": ["2025-11-14-18-42-09-00"], "labels": ["Rocky-10-1-x86_64-dvd"], "masters": []}, "vendor": "QEMU", "model": "QEMU DVD-ROM", "sas_address": null, "sas_device_handle": null, "removable": "1", "support_discard": "2048", "partitions": {}, "rotational": "1", "scheduler_mode": "mq-deadline", "sectors": "18121344", "sectorsize": "2048", "size": "8.64 GB", "host": "IDE interface: Intel Corporation 82371SB PIIX3 IDE [Natoma/Triton II]", "holders": []}, "dm-2": {"virtual": 1, "links": {"ids": ["dm-name-rl-home", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pASWeR6dDXRcsiy37Lrq0V9u1Llkcmd0uN"], "uuids": ["c6972874-b5dd-4f3d-b9b0-9418c8acb28d"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "1", "scheduler_mode": "", "sectors": "65396736", "sectorsize": "512", "size": "31.18 GB", "host": "", "holders": []}, "dm-0": {"virtual": 1, "links": {"ids": ["dm-name-rl-root", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAlSWhER9j8dig4r3PE8T862cSl0VBMzqS"], "uuids": ["8a781fa1-b597-4b3e-b604-65d53850cba4"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {}, "rotational": "1", "scheduler_mode": "", "sectors": "133939200", "sectorsize": "512", "size": "63.87 GB", "host": "", "holders": []}, "sda": {"virtual": 1, "links": {"ids": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0"], "uuids": [], "labels": [], "masters": []}, "vendor": "QEMU", "model": "QEMU HARDDISK", "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "4096", "partitions": {"sda2": {"links": {"ids": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part2"], "uuids": ["10612842-6746-4dec-a759-989023d384f7"], "labels": [], "masters": []}, "start": "4096", "sectors": "2097152", "sectorsize": 512, "size": "1.00 GB", "uuid": "10612842-6746-4dec-a759-989023d384f7", "holders": []}, "sda3": {"links": {"ids": ["lvm-pv-uuid-f6H11z-1RED-bdrv-oOuI-BqP1-NYuv-X9cMX3", "scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part3"], "uuids": [], "labels": [], "masters": ["dm-0", "dm-1", "dm-2"]}, "start": "2101248", "sectors": "207611904", "sectorsize": 512, "size": "99.00 GB", "uuid": null, "holders": ["rl-swap", "rl-home", "rl-root"]}, "sda1": {"links": {"ids": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part1"], "uuids": [], "labels": [], "masters": []}, "start": "2048", "sectors": "2048", "sectorsize": 512, "size": "1.00 MB", "uuid": null, "holders": []}}, "rotational": "1", "scheduler_mode": "none", "sectors": "209715200", "sectorsize": "512", "size": "100.00 GB", "host": "SCSI storage controller: Red Hat, Inc. Virtio SCSI", "holders": []}}, "ansible_device_links": {"ids": {"sda": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0"], "sda1": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part1"], "sda3": ["lvm-pv-uuid-f6H11z-1RED-bdrv-oOuI-BqP1-NYuv-X9cMX3", "scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part3"], "sda2": ["scsi-0QEMU_QEMU_HARDDISK_drive-scsi0-part2"], "sr0": ["ata-QEMU_DVD-ROM_QM00003"], "dm-0": ["dm-name-rl-root", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAlSWhER9j8dig4r3PE8T862cSl0VBMzqS"], "dm-1": ["dm-name-rl-swap", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pAW2kPfLd12vbwlcCljvw2UF6695uhLHdN"], "dm-2": ["dm-name-rl-home", "dm-uuid-LVM-Sl1ZcqUcxqGmKDdRv8gps2f4kZfyP3pASWeR6dDXRcsiy37Lrq0V9u1Llkcmd0uN"]}, "uuids": {"sda2": ["10612842-6746-4dec-a759-989023d384f7"], "sr0": ["2025-11-14-18-42-09-00"], "dm-0": ["8a781fa1-b597-4b3e-b604-65d53850cba4"], "dm-1": ["5f868530-cc1b-4226-a7fd-5fb8f02ef339"], "dm-2": ["c6972874-b5dd-4f3d-b9b0-9418c8acb28d"]}, "labels": {"sr0": ["Rocky-10-1-x86_64-dvd"]}, "masters": {"sda3": ["dm-0", "dm-1", "dm-2"]}}, "ansible_uptime_seconds": 1827, "ansible_lvm": {"lvs": {"home": {"size_g": "31.18", "vg": "rl"}, "root": {"size_g": "63.87", "vg": "rl"}, "swap": {"size_g": "3.95", "vg": "rl"}}, "vgs": {"rl": {"size_g": "99.00", "free_g": "0", "num_lvs": "3", "num_pvs": "1"}}, "pvs": {"/dev/sda3": {"size_g": "99.00", "free_g": "0", "vg": "rl"}}}, "ansible_mounts": [{"mount": "/", "device": "/dev/mapper/rl-root", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 68509761536, "size_available": 64839143424, "block_size": 4096, "block_total": 16726016, "block_available": 15829869, "block_used": 896147, "inode_total": 33484800, "inode_available": 33402254, "inode_used": 82546, "uuid": "8a781fa1-b597-4b3e-b604-65d53850cba4"}, {"mount": "/home", "device": "/dev/mapper/rl-home", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 33416019968, "size_available": 32742256640, "block_size": 4096, "block_total": 8158208, "block_available": 7993715, "block_used": 164493, "inode_total": 16349184, "inode_available": 16349176, "inode_used": 8, "uuid": "c6972874-b5dd-4f3d-b9b0-9418c8acb28d"}, {"mount": "/boot", "device": "/dev/sda2", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 1006632960, "size_available": 509583360, "block_size": 4096, "block_total": 245760, "block_available": 124410, "block_used": 121350, "inode_total": 524288, "inode_available": 523918, "inode_used": 370, "uuid": "10612842-6746-4dec-a759-989023d384f7"}], "ansible_hostnqn": "nqn.2014-08.org.nvmexpress:uuid:3088aa07-deb2-4e38-9196-1e812e148f35", "ansible_cmdline": {"BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-6.12.0-211.44.1.el10_2.x86_64", "root": "/dev/mapper/rl-root", "ro": true, "crashkernel": "2G-64G:256M,64G-:512M", "resume": "UUID=5f868530-cc1b-4226-a7fd-5fb8f02ef339", "rd.lvm.lv": "rl/swap", "rhgb": true, "quiet": true}, "ansible_proc_cmdline": {"BOOT_IMAGE": "(hd0,gpt2)/vmlinuz-6.12.0-211.44.1.el10_2.x86_64", "root": "/dev/mapper/rl-root", "ro": true, "crashkernel": "2G-64G:256M,64G-:512M", "resume": "UUID=5f868530-cc1b-4226-a7fd-5fb8f02ef339", "rd.lvm.lv": ["rl/root", "rl/swap"], "rhgb": true, "quiet": true}, "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_interfaces": ["ens18", "lo"], "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "", "netmask": "255.0.0.0", "network": "127.0.0.0", "prefix": "8"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_ens18": {"device": "ens18", "macaddress": "bc:24:11:74:74:cb", "mtu": 1500, "active": true, "module": "virtio_net", "type": "ether", "pciid": "virtio1", "speed": -1, "promisc": false, "ipv4": {"address": "192.168.88.210", "broadcast": "192.168.88.255", "netmask": "255.255.255.0", "network": "192.168.88.0", "prefix": "24"}, "ipv6": [{"address": "fe80::be24:11ff:fe74:74cb", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "on [fixed]", "vlan_challenged": "off [fixed]", "tx_gso_robust": "on [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "on", "tx_udp_tnl_csum_segmentation": "on", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "tls_hw_rx_offload": "off [fixed]", "rx_gro_hw": "on", "tls_hw_record": "off [fixed]", "rx_gro_list": "off", "macsec_hw_offload": "off [fixed]", "rx_udp_gro_forwarding": "off", "hsr_tag_ins_offload": "off [fixed]", "hsr_tag_rm_offload": "off [fixed]", "hsr_fwd_offload": "off [fixed]", "hsr_dup_offload": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "192.168.88.1", "interface": "ens18", "address": "192.168.88.210", "broadcast": "192.168.88.255", "netmask": "255.255.255.0", "network": "192.168.88.0", "prefix": "24", "macaddress": "bc:24:11:74:74:cb", "mtu": 1500, "type": "ether", "alias": "ens18"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["192.168.88.210"], "ansible_all_ipv6_addresses": ["fe80::be24:11ff:fe74:74cb"], "ansible_locally_reachable_ips": {"ipv4": ["127.0.0.0/8", "127.0.0.1", "192.168.88.210"], "ipv6": ["::1", "fe80::be24:11ff:fe74:74cb"]}, "ansible_iscsi_iqn": "", "ansible_fibre_channel_wwn": [], "ansible_lsb": {}, "ansible_local": {}, "ansible_date_time": {"year": "2026", "month": "08", "weekday": "Tuesday", "weekday_number": "2", "weeknumber": "32", "day": "11", "hour": "17", "minute": "04", "second": "41", "epoch": "1786457081", "epoch_int": "1786457081", "date": "2026-08-11", "time": "17:04:41", "iso8601_micro": "2026-08-11T14:04:41.560020Z", "iso8601": "2026-08-11T14:04:41Z", "iso8601_basic": "20260811T170441560020", "iso8601_basic_short": "20260811T170441", "tz": "MSK", "tz_dst": "MSK", "tz_offset": "+0300"}, "ansible_pkg_mgr": "dnf", "ansible_fips": false, "ansible_dns": {"search": ["ipa.rischool.ru"], "nameservers": ["192.168.88.1", "8.8.8.8", "77.88.8.8"]}, "ansible_loadavg": {"1m": 0.09521484375, "5m": 0.10107421875, "15m": 0.07421875}, "ansible_service_mgr": "systemd", "ansible_python": {"version": {"major": 3, "minor": 12, "micro": 13, "releaselevel": "final", "serial": 0}, "version_info": [3, 12, 13, "final", 0], "executable": "/usr/bin/python3", "has_sslcontext": true, "type": "cpython"}, "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": [], "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:04:41,588 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:41,589 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786457080.4191668-21308-103112560351291/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:04:41,630 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:41,639 p=21288 u=ben n=ansible | ok: [nfs.ipa.rischool.ru]
+2026-08-11 17:04:41,650 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:41,651 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:41,652 p=21288 u=ben n=ansible | TASK [Update repositories] *****************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:41,666 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:41,666 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:04:41,709 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:04:41,709 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:41,709 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957 `" && echo ansible-tmp-1786457081.709082-21340-10527025110957="` echo /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957 `" ) && sleep 0'"'"''
+2026-08-11 17:04:41,752 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786457081.709082-21340-10527025110957=/root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957\n', b'')
+2026-08-11 17:04:41,882 p=21288 u=ben n=ansible | Using module file /usr/lib/python3/dist-packages/ansible/modules/dnf.py
+2026-08-11 17:04:41,882 p=21288 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmpyq7_mkcl TO /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957/AnsiballZ_dnf.py
+2026-08-11 17:04:41,882 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:04:42,013 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmpyq7_mkcl /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957/AnsiballZ_dnf.py\n', b'')
+2026-08-11 17:04:42,013 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:42,013 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957/ /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:04:42,055 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:42,055 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:42,056 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:04:52,016 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'\r\n{"msg": "Cache updated", "changed": false, "results": [], "rc": 0, "invocation": {"module_args": {"update_cache": true, "allow_downgrade": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_repoquery": true, "install_weak_deps": true, "name": [], "security": false, "skip_broken": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "allowerasing": false, "nobest": false, "use_backend": "auto", "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "releasever": null, "state": null}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:04:52,017 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:52,017 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786457081.709082-21340-10527025110957/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:04:52,059 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:52,060 p=21288 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [],
+            "nobest": false,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": null,
+            "update_cache": true,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "Cache updated",
+    "rc": 0,
+    "results": []
+}
+2026-08-11 17:04:52,072 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,072 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,082 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,082 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,096 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,097 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,098 p=21288 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:52,126 p=21288 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml) => {
+    "ansible_facts": {
+        "ipaclient_packages": [
+            "ipa-client",
+            "python3-libselinux"
+        ],
+        "ipaclient_packages_dot": [
+            "ipa-client-encrypted-dns"
+        ]
+    },
+    "ansible_included_var_files": [
+        "/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml"
+    ],
+    "ansible_loop_var": "item",
+    "changed": false,
+    "item": "/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml"
+}
+2026-08-11 17:04:52,140 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,141 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,141 p=21288 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:52,177 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,177 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,195 p=21288 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for nfs.ipa.rischool.ru
+2026-08-11 17:04:52,202 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,203 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,210 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,211 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,218 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,218 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,227 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,227 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,234 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,234 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,245 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,246 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,246 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:52,274 p=21288 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => {
+    "ansible_facts": {
+        "_ipapackages": [
+            "ipa-client",
+            "python3-libselinux"
+        ]
+    },
+    "changed": false
+}
+2026-08-11 17:04:52,286 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,286 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,287 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 17:04:52,312 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_dns_over_tls | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:52,323 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:52,324 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:52,324 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:52,354 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:52,355 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:04:52,397 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:04:52,397 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:52,397 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144 `" && echo ansible-tmp-1786457092.3971324-21380-54589332817144="` echo /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144 `" ) && sleep 0'"'"''
+2026-08-11 17:04:52,440 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786457092.3971324-21380-54589332817144=/root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144\n', b'')
+2026-08-11 17:04:52,442 p=21288 u=ben n=ansible | Using module file /usr/lib/python3/dist-packages/ansible/modules/dnf.py
+2026-08-11 17:04:52,442 p=21288 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmpecuex0kj TO /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144/AnsiballZ_dnf.py
+2026-08-11 17:04:52,442 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:04:52,566 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmpecuex0kj /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144/AnsiballZ_dnf.py\n', b'')
+2026-08-11 17:04:52,566 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:52,566 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144/ /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:04:52,608 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:52,608 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:52,608 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144/AnsiballZ_dnf.py && sleep 0'"'"''
+2026-08-11 17:04:53,172 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'\r\n{"msg": "Nothing to do", "changed": false, "results": [], "rc": 0, "invocation": {"module_args": {"name": ["ipa-client", "python3-libselinux"], "state": "present", "allow_downgrade": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_repoquery": true, "install_weak_deps": true, "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "allowerasing": false, "nobest": false, "use_backend": "auto", "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "releasever": null}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:04:53,173 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:53,173 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786457092.3971324-21380-54589332817144/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:04:53,213 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:53,215 p=21288 u=ben n=ansible | ok: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "ipa-client",
+                "python3-libselinux"
+            ],
+            "nobest": false,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+2026-08-11 17:04:53,227 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,228 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,228 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,244 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "groups.ipaservers is defined and ipaclient_servers is not defined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:53,254 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,255 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,255 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,285 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_no_dns_lookup | bool and groups.ipaserver is defined and ipaclient_servers is not defined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:53,297 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,297 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,298 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,313 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaadmin_keytab is defined and ipaadmin_password is defined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:53,323 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,324 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,325 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,340 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaadmin_principal is undefined and ipaclient_keytab is undefined",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:53,351 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,352 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,352 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,375 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_configure_dns_resolver | bool and not ipaclient_on_master | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:53,386 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,387 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,387 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,411 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_configure_dns_resolver | bool and not ipaclient_on_master | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:53,422 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,423 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,423 p=21288 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,448 p=21288 u=ben n=ansible | skipping: [nfs.ipa.rischool.ru] => {
+    "changed": false,
+    "false_condition": "ipaclient_configure_dns_resolver | bool and not ipaclient_on_master | bool",
+    "skip_reason": "Conditional result was False"
+}
+2026-08-11 17:04:53,459 p=21288 u=ben n=ansible | Read vars_file 'vars/secrets.yml'
+2026-08-11 17:04:53,460 p=21288 u=ben n=ansible | Read vars_file 'vars/vars.yml'
+2026-08-11 17:04:53,460 p=21288 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:53,493 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:53,493 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'echo ~root && sleep 0'"'"''
+2026-08-11 17:04:53,534 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'/root\n', b'')
+2026-08-11 17:04:53,534 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:53,534 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /root/.ansible/tmp `"&& mkdir "` echo /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624 `" && echo ansible-tmp-1786457093.5340586-21407-5019991429624="` echo /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624 `" ) && sleep 0'"'"''
+2026-08-11 17:04:53,579 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'ansible-tmp-1786457093.5340586-21407-5019991429624=/root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624\n', b'')
+2026-08-11 17:04:53,663 p=21288 u=ben n=ansible | Using module file /home/ben/Repositories/freeipa-ansible/roles/ipaclient/library/ipaclient_test.py
+2026-08-11 17:04:53,663 p=21288 u=ben n=ansible | <192.168.88.210> PUT /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmp9v9i9fzm TO /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624/AnsiballZ_ipaclient_test.py
+2026-08-11 17:04:53,664 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' '[192.168.88.210]'
+2026-08-11 17:04:53,788 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'sftp> put /home/ben/.ansible/tmp/ansible-local-21288t5zzebe7/tmp9v9i9fzm /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624/AnsiballZ_ipaclient_test.py\n', b'')
+2026-08-11 17:04:53,788 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:53,788 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'chmod u+x /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624/ /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624/AnsiballZ_ipaclient_test.py && sleep 0'"'"''
+2026-08-11 17:04:53,832 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:53,832 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:53,832 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' -tt 192.168.88.210 '/bin/sh -c '"'"'/usr/bin/python3 /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624/AnsiballZ_ipaclient_test.py && sleep 0'"'"''
+2026-08-11 17:04:54,314 p=21288 u=ben n=ansible | <192.168.88.210> (1, b'\r\n{"failed": true, "msg": "Unable to find IPA Server to join", "exception": "  File \\"/tmp/ansible_ipaclient_test_payload_hk8736me/ansible_ipaclient_test_payload.zip/ansible/modules/ipaclient_test.py\\", line 785, in main\\n    raise ScriptError(\\n", "invocation": {"module_args": {"domain": "ipa.rischool.ru", "realm": "IPA.RISCHOOL.RU", "hostname": "nfs.ipa.rischool.ru", "no_ntp": false, "force_ntpd": false, "no_nisdomain": false, "kinit_attempts": 5, "configure_firefox": false, "all_ip_addresses": true, "on_master": false, "dns_over_tls": false, "no_dnssec_validation": false, "enable_dns_updates": true, "servers": null, "ntp_servers": null, "ntp_pool": null, "nisdomain": null, "ca_cert_files": null, "firefox_dir": null, "ip_addresses": null}}}\r\n', b'Shared connection to 192.168.88.210 closed.\r\n')
+2026-08-11 17:04:54,314 p=21288 u=ben n=ansible | <192.168.88.210> Failed to connect to the host via ssh: Shared connection to 192.168.88.210 closed.
+2026-08-11 17:04:54,314 p=21288 u=ben n=ansible | <192.168.88.210> ESTABLISH SSH CONNECTION FOR USER: root
+2026-08-11 17:04:54,315 p=21288 u=ben n=ansible | <192.168.88.210> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o 'IdentityFile="/home/ben/.ssh/ansible"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="root"' -o ConnectTimeout=10 -o 'ControlPath="/home/ben/.ansible/cp/503aeba334"' 192.168.88.210 '/bin/sh -c '"'"'rm -f -r /root/.ansible/tmp/ansible-tmp-1786457093.5340586-21407-5019991429624/ > /dev/null 2>&1 && sleep 0'"'"''
+2026-08-11 17:04:54,357 p=21288 u=ben n=ansible | <192.168.88.210> (0, b'', b'')
+2026-08-11 17:04:54,358 p=21288 u=ben n=ansible | The full traceback is:
+  File "/tmp/ansible_ipaclient_test_payload_hk8736me/ansible_ipaclient_test_payload.zip/ansible/modules/ipaclient_test.py", line 785, in main
+    raise ScriptError(
+
+2026-08-11 17:04:54,358 p=21288 u=ben n=ansible | fatal: [nfs.ipa.rischool.ru]: FAILED! => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "all_ip_addresses": true,
+            "ca_cert_files": null,
+            "configure_firefox": false,
+            "dns_over_tls": false,
+            "domain": "ipa.rischool.ru",
+            "enable_dns_updates": true,
+            "firefox_dir": null,
+            "force_ntpd": false,
+            "hostname": "nfs.ipa.rischool.ru",
+            "ip_addresses": null,
+            "kinit_attempts": 5,
+            "nisdomain": null,
+            "no_dnssec_validation": false,
+            "no_nisdomain": false,
+            "no_ntp": false,
+            "ntp_pool": null,
+            "ntp_servers": null,
+            "on_master": false,
+            "realm": "IPA.RISCHOOL.RU",
+            "servers": null
+        }
+    },
+    "msg": "Unable to find IPA Server to join"
+}
+2026-08-11 17:04:54,359 p=21288 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 17:04:54,359 p=21288 u=ben n=ansible | nfs.ipa.rischool.ru        : ok=6    changed=0    unreachable=0    failed=1    skipped=8    rescued=0    ignored=0   
