@@ -342,3 +342,483 @@ localhost                  : ok=48   changed=31   unreachable=0    failed=0    s
 Starting Ansible Pull at 2026-07-24 15:07:07
 /usr/bin/ansible-pull -U https://github.com/passmore-ris/ansible_pull_config.git -d /opt/ansible --vault-password /opt/.vault-password
 
+2026-08-11 14:36:54,639 p=7252 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:36:54,659 p=7252 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:36:54,673 p=7252 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:36:55,302 p=7258 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:36:55,484 p=7258 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:36:55,568 p=7201 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:36:58,748 p=7303 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:36:58,767 p=7303 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:36:58,782 p=7303 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:36:59,343 p=7313 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:36:59,521 p=7313 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:36:59,617 p=7271 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:37:02,824 p=7356 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:02,827 p=7356 u=ben n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/home/ben/Repositories/freeipa-ansible/groups.yml': line 45, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name:
+    ^ here
+
+2026-08-11 14:37:07,542 p=7397 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:07,546 p=7397 u=ben n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/home/ben/Repositories/freeipa-ansible/groups.yml': line 45, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name: C
+    ^ here
+
+2026-08-11 14:37:14,772 p=7448 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:14,776 p=7448 u=ben n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/home/ben/Repositories/freeipa-ansible/groups.yml': line 45, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name: Veyon users
+    ^ here
+
+2026-08-11 14:37:16,604 p=7485 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:16,609 p=7485 u=ben n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/home/ben/Repositories/freeipa-ansible/groups.yml': line 45, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name: Veyon users group
+    ^ here
+
+2026-08-11 14:37:19,020 p=7526 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:19,024 p=7526 u=ben n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/home/ben/Repositories/freeipa-ansible/groups.yml': line 45, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  - name: Veyon users group
+    ^ here
+
+2026-08-11 14:37:22,814 p=7568 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:22,833 p=7568 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:37:22,847 p=7568 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:37:23,417 p=7574 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:23,587 p=7574 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:37:23,679 p=7532 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:37:28,714 p=7617 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:28,733 p=7617 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:37:28,747 p=7617 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:37:29,331 p=7623 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:29,497 p=7623 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:37:29,576 p=7583 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:37:38,356 p=7674 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:38,376 p=7674 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:37:38,390 p=7674 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:37:38,969 p=7683 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:39,138 p=7683 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:37:39,207 p=7639 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:37:40,282 p=7716 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:40,301 p=7716 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:37:40,315 p=7716 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:37:40,880 p=7722 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:41,043 p=7722 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:37:41,126 p=7680 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:37:43,173 p=7763 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:43,192 p=7763 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:37:43,206 p=7763 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:37:43,744 p=7769 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:43,898 p=7769 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:37:43,986 p=7729 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:37:53,004 p=7816 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:53,010 p=7816 u=ben n=ansible | ERROR! tags must be specified as a list
+2026-08-11 14:37:54,435 p=7852 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:54,439 p=7852 u=ben n=ansible | ERROR! tags must be specified as a list
+2026-08-11 14:37:59,238 p=7894 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:37:59,242 p=7894 u=ben n=ansible | ERROR! tags must be specified as a list
+2026-08-11 14:38:02,716 p=7932 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:38:02,720 p=7932 u=ben n=ansible | ERROR! tags must be specified as a list
+2026-08-11 14:38:08,217 p=7975 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:38:08,221 p=7975 u=ben n=ansible | ERROR! tags must be specified as a list
+2026-08-11 14:38:15,962 p=8026 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:38:15,966 p=8026 u=ben n=ansible | ERROR! tags must be specified as a list
+2026-08-11 14:38:20,330 p=8069 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:38:20,334 p=8069 u=ben n=ansible | ERROR! tags must be specified as a list
+2026-08-11 14:38:56,390 p=8186 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:38:56,410 p=8186 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:38:56,425 p=8186 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:38:56,995 p=8194 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:38:57,162 p=8194 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:38:57,235 p=8148 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:39:02,120 p=8237 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:02,139 p=8237 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:39:02,154 p=8237 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:39:02,713 p=8243 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:02,860 p=8243 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:39:02,939 p=8202 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:39:11,291 p=8292 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:11,310 p=8292 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:39:11,324 p=8292 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:39:11,854 p=8299 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:12,005 p=8299 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:39:12,085 p=8258 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:39:26,237 p=8347 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:26,256 p=8347 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:39:26,270 p=8347 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:39:26,870 p=8354 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:26,998 p=8354 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:39:27,086 p=8313 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:39:43,407 p=8470 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:43,426 p=8470 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:39:43,440 p=8470 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:39:44,010 p=8476 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:39:44,146 p=8476 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:39:44,230 p=8435 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:40:10,375 p=8527 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:40:10,394 p=8527 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 14:40:10,408 p=8527 u=ben n=ansible | playbook: groups.yml
+2026-08-11 14:40:10,978 p=8533 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:40:11,135 p=8533 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:40:11,204 p=8493 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:40:55,848 p=8622 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:40:55,865 p=8622 u=ben n=ansible | playbook: read_data.yml
+2026-08-11 14:40:56,393 p=8628 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:40:56,546 p=8628 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:40:56,591 p=8588 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:41:04,274 p=8676 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:41:04,292 p=8676 u=ben n=ansible | playbook: read_data.yml
+2026-08-11 14:41:04,882 p=8684 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:41:05,021 p=8684 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:41:05,074 p=8641 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 14:41:14,349 p=8734 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:41:14,366 p=8734 u=ben n=ansible | playbook: read_data.yml
+2026-08-11 14:41:14,943 p=8740 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 14:41:15,082 p=8740 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 14:41:15,140 p=8700 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
