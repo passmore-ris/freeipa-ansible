@@ -10,12 +10,12 @@
   tasks:
     - name: Parse staff user data from .csv file
       community.general.read_csv:
-        path: data/staff_users_test.csv
+        path: data/staff_users.csv
       register: staff_users
       delegate_to: localhost
 
     - name: Parse pupil user data from .csv file
       community.general.read_csv:
-        path: data/pupil_users_test.csv
+        path: data/pupil_users.csv
       register: pupil_users
       delegate_to: localhost

@@ -822,3 +822,472 @@ The offending line appears to be:
     "containers.podman.podman_unshare": "Run tasks using podman unshare"
 }
 2026-08-11 14:41:15,140 p=8700 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:07:55,488 p=14577 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:07:55,510 p=14577 u=ben n=ansible | playbook: read_data.yml
+2026-08-11 16:07:56,194 p=14608 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:07:56,354 p=14608 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:07:56,416 p=14388 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:29:56,226 p=15967 u=ben n=ansible | {{ ipa_server_fqdn }} | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-08-11 16:30:30,111 p=16109 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 16:30:30,126 p=16109 u=ben n=ansible | playbook: install-server.yml
+2026-08-11 16:30:30,963 p=16116 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:30:31,132 p=16116 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:30:31,310 p=16075 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaserver/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_server'
+2026-08-11 16:30:31,692 p=16075 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/uninstall.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:30:31,819 p=16075 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:30:32,134 p=16075 u=ben n=args | Unable to load module ipaserver at roles/ipaserver/tasks/uninstall.yml:32 for options validation
+2026-08-11 16:30:32,136 p=16075 u=ben n=ansiblelint.rules.fqcn | Unable to resolve FQCN for module ipaserver
+2026-08-11 16:30:41,673 p=16166 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 16:30:41,689 p=16166 u=ben n=ansible | playbook: install-server.yml
+2026-08-11 16:30:42,116 p=16129 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaserver/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_server'
+2026-08-11 16:30:43,004 p=16173 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:30:43,181 p=16173 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:30:43,431 p=16129 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:30:43,704 p=16129 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/uninstall.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:30:43,763 p=16129 u=ben n=args | Unable to load module ipaserver at roles/ipaserver/tasks/uninstall.yml:32 for options validation
+2026-08-11 16:30:43,765 p=16129 u=ben n=fqcn | Unable to resolve FQCN for module ipaserver
+2026-08-11 16:30:48,346 p=16214 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 16:30:48,361 p=16214 u=ben n=ansible | playbook: install-server.yml
+2026-08-11 16:30:48,647 p=16184 u=ben n=args | Unable to load module ipaserver at roles/ipaserver/tasks/uninstall.yml:32 for options validation
+2026-08-11 16:30:48,650 p=16184 u=ben n=fqcn | Unable to resolve FQCN for module ipaserver
+2026-08-11 16:30:49,149 p=16220 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:30:49,317 p=16220 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:30:49,384 p=16184 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/uninstall.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:30:49,492 p=16184 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:30:49,877 p=16184 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaserver/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_server'
+2026-08-11 16:31:07,757 p=16355 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:31:07,777 p=16355 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 16:31:07,791 p=16355 u=ben n=ansible | playbook: groups.yml
+2026-08-11 16:31:08,352 p=16361 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:31:08,490 p=16361 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:31:08,557 p=16321 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:31:32,285 p=16379 u=ben n=ansible | nfs.ipa.rischool.ru | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-08-11 16:35:34,534 p=16581 u=ben n=ansible | {{ ipa_server_fqdn }} | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-08-11 16:35:37,391 p=16638 u=ben n=ansible | nfs.ipa.rischool.ru | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-08-11 16:35:59,098 p=16761 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:35:59,144 p=16761 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaserver
+
+2026-08-11 16:35:59,158 p=16761 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: nfs.ipa.rischool.ru
+
+2026-08-11 16:35:59,173 p=16761 u=ben n=ansible | playbook: users.yml
+2026-08-11 16:35:59,752 p=16767 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:35:59,891 p=16767 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:36:00,040 p=16729 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:36:26,109 p=16844 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:36:26,129 p=16844 u=ben n=ansible | playbook: read_data.yml
+2026-08-11 16:36:26,689 p=16851 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:36:26,859 p=16851 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:36:26,908 p=16809 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:36:28,552 p=16858 u=ben n=py.warnings | <unknown>:1: SyntaxWarning: invalid decimal literal
+
+2026-08-11 16:36:29,778 p=16888 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:36:29,795 p=16888 u=ben n=ansible | playbook: read_data.yml
+2026-08-11 16:36:30,353 p=16894 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:36:30,545 p=16894 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:36:30,613 p=16858 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:36:53,949 p=16942 u=ben n=ansible | PLAY [Playbook to configure IPA server] ****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:36:53,963 p=16942 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:36:55,804 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:36:55,834 p=16942 u=ben n=ansible | TASK [ipaserver : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 16:36:55,859 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaserver/vars/default.yml)
+2026-08-11 16:36:55,872 p=16942 u=ben n=ansible | TASK [ipaserver : Install IPA server] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:36:55,930 p=16942 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaserver/tasks/install.yml for {{ ipa_server_fqdn }}
+2026-08-11 16:36:55,981 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Set ipaserver__dns_over_lts] ***********************************************************************************************************************************************************************************************************************
+2026-08-11 16:36:56,009 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:36:56,021 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 16:36:56,049 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:36:56,062 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Set packages for installlation, add DNS] ***********************************************************************************************************************************************************************************************************
+2026-08-11 16:36:56,091 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:36:56,103 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 16:36:56,131 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:36:56,143 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Set packages for installlation, add adtrust] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:36:56,168 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:36:56,181 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Set packages for installlation, add firewalld] *****************************************************************************************************************************************************************************************************
+2026-08-11 16:36:56,212 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:36:56,224 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:00,381 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:00,393 p=16942 u=ben n=ansible | TASK [ipaserver : Firewalld service - Ensure that firewalld is running] ********************************************************************************************************************************************************************************************************
+2026-08-11 16:38:01,357 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:01,370 p=16942 u=ben n=ansible | TASK [ipaserver : Firewalld - Verify runtime zone from ipaserver_firewalld_zone] ***********************************************************************************************************************************************************************************************
+2026-08-11 16:38:01,400 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:01,415 p=16942 u=ben n=ansible | TASK [ipaserver : Firewalld - Verify permanent zone from ipaserver_firewalld_zone] *********************************************************************************************************************************************************************************************
+2026-08-11 16:38:01,444 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:01,456 p=16942 u=ben n=ansible | TASK [ipaserver : Copy external certs] *****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:01,486 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:01,498 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Server installation test] **************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:02,698 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:02,709 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Master password creation] **************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:03,785 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:03,796 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Use new master password] ***************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:03,823 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:03,834 p=16942 u=ben n=ansible | TASK [ipaserver : Use user defined master password, if provided] ***************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:03,851 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:03,863 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Server preparation] ********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:06,068 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:06,081 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup NTP] *****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:13,518 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:13,531 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup DS] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:35,506 p=17333 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:38:35,509 p=17333 u=ben n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ipaclients
+
+2026-08-11 16:38:35,526 p=17333 u=ben n=ansible | playbook: setup_client.yml
+2026-08-11 16:38:35,932 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:35,944 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup KRB] *****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:38:36,282 p=17344 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:38:36,437 p=17344 u=ben n=ansible | {
+    "ansible.builtin.runas": "Run As user",
+    "ansible.builtin.su": "Substitute User",
+    "ansible.builtin.sudo": "Substitute User DO",
+    "ansible.netcommon.enable": "Switch to elevated permissions on a network device",
+    "community.general.doas": "Do As user",
+    "community.general.dzdo": "Centrify's Direct Authorize",
+    "community.general.ksu": "Kerberos substitute user",
+    "community.general.machinectl": "Systemd's machinectl privilege escalation",
+    "community.general.pbrun": "PowerBroker run",
+    "community.general.pfexec": "Profile based execution",
+    "community.general.pmrun": "Privilege Manager run",
+    "community.general.run0": "Systemd's run0",
+    "community.general.sesu": "CA Privileged Access Manager",
+    "community.general.sudosu": "Run tasks using sudo su -",
+    "containers.podman.podman_unshare": "Run tasks using podman unshare"
+}
+2026-08-11 16:38:36,518 p=17291 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/uninstall.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:38:36,661 p=17291 u=ben n=ansiblelint._internal.rules | Ignored exception from ArgsRule.<bound method AnsibleLintRule.matchtasks of args: Validating module arguments.> while processing roles/ipaclient/tasks/install.yml (tasks): No module named 'ansible.module_utils.ansible_ipa_client'
+2026-08-11 16:38:37,065 p=17291 u=ben n=ansiblelint.runner | /usr/lib/python3/dist-packages/ansible/plugins/loader.py:1451 AnsibleWarning Collection community.general does not support Ansible version 2.16.3
+2026-08-11 16:38:43,561 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:38:43,574 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup CA] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:42:45,622 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:42:45,637 p=16942 u=ben n=ansible | TASK [ipaserver : Copy /root/ipa.csr to "ipa00.ipa.rischool.ru-ipa.csr"] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:42:45,669 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:42:45,681 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup otpd] ****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:42:47,971 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:42:47,984 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup HTTP] ****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:14,686 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:14,699 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup KRA] *****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:14,731 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:14,743 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup DNS] *****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:35,770 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:35,784 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Setup ADTRUST] *************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:42,123 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:42,138 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Set DS password] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,061 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,073 p=16942 u=ben n=ansible | TASK [Install - Setup client] **************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,179 p=16942 u=ben n=ansible | TASK [ipaclient : Import variables specific to distribution] *******************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,222 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}] => (item=/home/ben/Repositories/freeipa-ansible/roles/ipaclient/vars/default.yml)
+2026-08-11 16:45:44,234 p=16942 u=ben n=ansible | TASK [ipaclient : Install IPA client] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,295 p=16942 u=ben n=ansible | included: /home/ben/Repositories/freeipa-ansible/roles/ipaclient/tasks/install.yml for {{ ipa_server_fqdn }}
+2026-08-11 16:45:44,345 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installation] *********************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,375 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,387 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Set packages for installlation, add DOT] ***********************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,416 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,427 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Ensure that packages are installed] ****************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,457 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,469 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,501 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,513 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Set ipaclient_servers from cluster inventory] ******************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,548 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,560 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Check that either password or keytab is set] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,591 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,604 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Set default principal if no keytab is given] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,639 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,650 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] *********************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,681 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,693 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Fail on missing ipaclient_dns_servers] *************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,724 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,736 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure DNS resolver] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:44,767 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:44,780 p=16942 u=ben n=ansible | TASK [ipaclient : Install - IPA client test] ***********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:45,907 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:45,920 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Cleanup leftover ccache] ***************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:46,495 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:46,507 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure NTP] *************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:47,340 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:47,353 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Make sure One-Time Password is enabled if it's already defined] ************************************************************************************************************************************************************************************
+2026-08-11 16:45:47,384 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:47,395 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Disable One-Time Password for on_master] ***********************************************************************************************************************************************************************************************************
+2026-08-11 16:45:47,426 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:47,438 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Test if IPA client has working krb5.keytab] ********************************************************************************************************************************************************************************************************
+2026-08-11 16:45:48,887 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:48,902 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Disable One-Time Password for client with working krb5.keytab] *************************************************************************************************************************************************************************************
+2026-08-11 16:45:48,934 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:48,946 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Keytab or password is required for getting otp] ****************************************************************************************************************************************************************************************************
+2026-08-11 16:45:48,979 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:48,991 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Create temporary file for keytab] ******************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,033 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,047 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Copy keytab to server temporary file] **************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,089 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,102 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Get One-Time Password for client enrollment] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,145 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,157 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Store the previously obtained OTP] *****************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,191 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,204 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Remove keytab temporary file] **********************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,247 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,259 p=16942 u=ben n=ansible | TASK [ipaclient : Store predefined OTP in admin_password] **********************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,291 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,304 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Check if principal and keytab are set] *************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,337 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,348 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Check if one of password or keytabs are set] *******************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,380 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,393 p=16942 u=ben n=ansible | TASK [ipaclient : Install - From host keytab, purge IPA.RISCHOOL.RU] ***********************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,426 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,439 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Backup and set hostname] ***************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:49,471 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:49,483 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Create temporary krb5 configuration] ***************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:50,356 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:50,369 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Join IPA] ******************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:50,401 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:50,412 p=16942 u=ben n=ansible | TASK [ipaclient : The krb5 configuration is not correct] ***********************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:50,445 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:50,457 p=16942 u=ben n=ansible | TASK [ipaclient : IPA test failed] *********************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:50,489 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:50,501 p=16942 u=ben n=ansible | TASK [ipaclient : Fail due to missing ca.crt file] *****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:50,537 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:50,549 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure IPA default.conf] ************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:50,585 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:50,597 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure SSSD] ************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:51,456 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:51,469 p=16942 u=ben n=ansible | TASK [ipaclient : Install - IPA API calls for remaining enrollment parts] ******************************************************************************************************************************************************************************************************
+2026-08-11 16:45:53,962 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:53,975 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Fix IPA ca] ****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:45:54,010 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:45:54,024 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Create IPA NSS database] ***************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:01,302 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:01,316 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure SSH and SSHD] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:02,209 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:02,223 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure automount] *******************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:03,059 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:03,070 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure firefox] *********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:03,103 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:03,114 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure NIS] *************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:04,269 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:04,282 p=16942 u=ben n=ansible | TASK [ipaclient : Remove temporary krb5.conf] **********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:04,803 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:04,816 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure krb5 for IPA realm] **********************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:04,850 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:04,863 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Configure certmonger] ******************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:04,897 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:04,909 p=16942 u=ben n=ansible | TASK [ipaclient : Install - Restore original admin password if overwritten by OTP] *********************************************************************************************************************************************************************************************
+2026-08-11 16:46:04,940 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:04,952 p=16942 u=ben n=ansible | TASK [ipaclient : Cleanup leftover ccache] *************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:05,463 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:05,475 p=16942 u=ben n=ansible | TASK [ipaclient : Remove temporary krb5.conf] **********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:05,979 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:05,992 p=16942 u=ben n=ansible | TASK [ipaclient : Remove temporary krb5.conf backup] ***************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:06,501 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:06,514 p=16942 u=ben n=ansible | TASK [ipaclient : Uninstall IPA client] ****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:06,550 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:06,572 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Enable IPA] ****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:11,196 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:11,209 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Configure firewalld] *******************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:12,059 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:12,073 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Configure firewalld runtime] ***********************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:12,794 p=16942 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:12,806 p=16942 u=ben n=ansible | TASK [ipaserver : Install - Cleanup root IPA cache] ****************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:13,308 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:13,322 p=16942 u=ben n=ansible | TASK [ipaserver : Cleanup temporary files] *************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:13,811 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}] => (item=/etc/ipa/.tmp_pkcs12_dirsrv)
+2026-08-11 16:46:14,281 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}] => (item=/etc/ipa/.tmp_pkcs12_http)
+2026-08-11 16:46:14,750 p=16942 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}] => (item=/etc/ipa/.tmp_pkcs12_pkinit)
+2026-08-11 16:46:14,764 p=16942 u=ben n=ansible | TASK [ipaserver : Uninstall IPA server] ****************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:14,798 p=16942 u=ben n=ansible | skipping: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:14,850 p=16942 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:14,851 p=16942 u=ben n=ansible | {{ ipa_server_fqdn }}      : ok=45   changed=22   unreachable=0    failed=0    skipped=43   rescued=0    ignored=0   
+2026-08-11 16:46:15,318 p=18639 u=ben n=ansible | [WARNING]: Collection community.general does not support Ansible version 2.16.3
+
+2026-08-11 16:46:15,352 p=18639 u=ben n=ansible | PLAY [Configuring Users] *******************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:15,379 p=18639 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:16,441 p=18639 u=ben n=ansible | ok: [localhost]
+2026-08-11 16:46:16,476 p=18639 u=ben n=ansible | TASK [Parse staff user data from .csv file] ************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:16,736 p=18639 u=ben n=ansible | ok: [localhost]
+2026-08-11 16:46:16,748 p=18639 u=ben n=ansible | TASK [Parse pupil user data from .csv file] ************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:16,946 p=18639 u=ben n=ansible | ok: [localhost]
+2026-08-11 16:46:17,015 p=18639 u=ben n=ansible | PLAY [Playbook to handle groups] ***********************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:17,025 p=18639 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:18,195 p=18639 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:18,229 p=18639 u=ben n=ansible | TASK [Staff group] *************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:20,242 p=18639 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:20,257 p=18639 u=ben n=ansible | TASK [Pupils group] ************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:22,176 p=18639 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:22,216 p=18639 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:22,216 p=18639 u=ben n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-08-11 16:46:22,216 p=18639 u=ben n=ansible | {{ ipa_server_fqdn }}      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-08-11 16:46:22,714 p=18873 u=ben n=ansible | PLAY [Configure automember rules] **********************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:22,742 p=18873 u=ben n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:24,049 p=18873 u=ben n=ansible | ok: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:24,083 p=18873 u=ben n=ansible | TASK [Ensure automember rule for pupils exists] ********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:26,077 p=18873 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:26,089 p=18873 u=ben n=ansible | TASK [Ensure automember rule for staff exists] *********************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:28,004 p=18873 u=ben n=ansible | changed: [{{ ipa_server_fqdn }}]
+2026-08-11 16:46:28,048 p=18873 u=ben n=ansible | PLAY RECAP *********************************************************************************************************************************************************************************************************************************************************************
+2026-08-11 16:46:28,048 p=18873 u=ben n=ansible | {{ ipa_server_fqdn }}      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

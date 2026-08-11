@@ -9,9 +9,17 @@ This is a repository containing an ansible collection used to set up and configu
 - You must have the *freeipa.ansible_freeipa* and *community.general* collections installed from ansible galaxy.
 
 ### The *hosts.ini* File
+This is the most important part of the setup, as all configurations and some variables are passed through here. It's recommended to read the documentation for each role, which can all be found in the *roles* folder.
+#### Roles
+There are two main roles used here, which is the *ipaserver* and *ipaclient* role. The *ipareplica* role will be configured later.
+The *ipaclient* role has three sub-roles:
+- pupil_workstations
+- staff_workstations
+- nfsserver
+This has been split because local ansible variables will be set depending on its sub-role, which is to be used in ansible-pull afterwards.
 
 ### CSV data
-
+CSV data should be specified according to the samples found in the *data* folder. Note that the **read_data.yml** playbook will parse files called "staff_users.csv" and "pupil_users.csv" unless changed manually.
 
 ## Setup
 Here are instructions on how to set up the FreeIPA infrastructure using this repository.
