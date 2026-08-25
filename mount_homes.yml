@@ -13,7 +13,7 @@
     - name: Register the NFS service principal
       freeipa.ansible_freeipa.ipaservice:
         ipaadmin_password: "{{ vault_ipaadmin_password }}"
-        name: nfs/nfs.ipa.rischool.ru
+        name: nfs/nfs.ipa.rischool.site
         host: "{{ nfs_fqdn }}"
         state: present
 
@@ -38,7 +38,7 @@
         location: default
         mapname: auto.home
         key: "*"
-        info: "-fstype=nfs4,rw,sec=krb5,soft nfs.ipa.rischool.ru:{{ nfs_share_path }}/&"
+        info: "-fstype=nfs4,rw,sec=krb5,soft nfs.ipa.rischool.site:{{ nfs_share_path }}/&"
         state: present
 
 - name: Configure NFS server to serve auomounts
@@ -57,14 +57,14 @@
     # - name: Generate and install NFS keytab on the NFS server
     #   community.general.ipa_getkeytab:
     #     ipa_host: "{{ ipaserver_fqdn }}"
-    #     principal: nfs/nfs.ipa.rischool.ru
+    #     principal: nfs/nfs.ipa.rischool.site
     #     path: /etc/krb5.keytab
     #     state: present
     #     force: true
 
     # I would like to be able to use the community.general.ipa_getkeytab module, but it either ignores the current task or overwrites the current keytab.
     - name: Generate, retrieve, and install the keytab for the new NFS service principal to /etc/krb5.keytab
-      ansible.builtin.command: ipa-getkeytab -s "{{ ipaserver_fqdn }}"  -p nfs/nfs.ipa.rischool.ru -k /etc/krb5.keytab
+      ansible.builtin.command: ipa-getkeytab -s "{{ ipaserver_fqdn }}"  -p nfs/nfs.ipa.rischool.site -k /etc/krb5.keytab
 
     - name: Ensure nfs share path exists
       ansible.builtin.file:

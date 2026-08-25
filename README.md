@@ -3,9 +3,9 @@ This is a repository containing an ansible collection used to set up and configu
 
 ## Requirements
 - The ansible user, as specified in ansible.cfg, is *root*. When distributing ssh keys, it must be assigned to the root user of all machines.
-- The domain is **ipa.rischool.ru**
-- The IPA server must be called ipa00.ipa.rischool.ru
-- The NFS server must be named **nfs.ipa.rischool.ru**
+- The domain is **ipa.rischool.site**
+- The IPA server must be called ipa00.ipa.rischool.site
+- The NFS server must be named **nfs.ipa.rischool.site**
 - You must have the *freeipa.ansible_freeipa* and *community.general* collections installed from ansible galaxy.
 
 ### The *hosts.ini* File

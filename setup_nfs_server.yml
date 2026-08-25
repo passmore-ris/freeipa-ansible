@@ -6,7 +6,7 @@
 # Run this playbook after the IPA server has been set up.
 ---
 - name: Set up NFS server
-  hosts: nfs.ipa.rischool.ru
+  hosts: nfs.ipa.rischool.site
   become: true
   gather_facts: true
   vars_files:

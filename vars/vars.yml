@@ -1,4 +1,4 @@
 nfs_share_path: /export/home
-domain_name: ipa.rischool.ru
-ipaserver_fqdn: ipa00.ipa.rischool.ru
-nfs_fqdn: nfs.ipa.rischool.ru
+domain_name: ipa.rischool.site
+ipaserver_fqdn: ipa00.ipa.rischool.site
+nfs_fqdn: nfs.ipa.rischool.site
