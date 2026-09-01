@@ -1,0 +1,38 @@
+- name: Configure host groups
+  hosts: ipaservers
+  become: true
+  gather_facts: true
+  vars_files:
+    - vars/secrets.yml
+    - vars/vars.yml
+
+  tasks:
+    - name: Ensure honor laptops host group and members exist
+      freeipa.ansible_freeipa.ipahostgroup:
+        ipaadmin_password: "{{ vault_ipaadmin_password }}"
+        name: honor_laptops
+        description: Group containing all Honor laptops
+        host:
+          - honor01.ipa.rischool.site
+          - honor02.ipa.rischool.site
+          - honor03.ipa.rischool.site
+          - honor04.ipa.rischool.site
+          - honor05.ipa.rischool.site
+          - honor06.ipa.rischool.site
+          - honor07.ipa.rischool.site
+          - honor08.ipa.rischool.site
+          - honor09.ipa.rischool.site
+          - honor10.ipa.rischool.site
+          - honor11.ipa.rischool.site
+          - honor12.ipa.rischool.site
+          - honor13.ipa.rischool.site
+          - honor14.ipa.rischool.site
+          - honor15.ipa.rischool.site
+
+    - name: Ensure staff workstations host group and member groups exist
+      freeipa.ansible_freeipa.ipahostgroup:
+        ipaadmin_password: "{{ vault_ipaadmin_password }}"
+        name: staff_workstations
+        description: Group containing all staff workstations
+        hostgroup:
+          - honor_laptops
