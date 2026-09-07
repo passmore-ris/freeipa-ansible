@@ -1,0 +1,18 @@
+- name: Configure DNS zones
+  hosts: ipaservers
+  become: true
+  gather_facts: true
+  vars_files:
+    - vars/vars.yml
+    - vars/secrets.yml
+
+  tasks:
+
+    - name: Maintain reverse dns zone for school subnets
+      freeipa.ansible_freeipa.ipadnszone:
+        ipaadmin_password: "{{ vault_ipaadmin_password }}"
+        name_from_ip: "{{ item }}"
+        state: present
+        allow_sync_ptr: true
+        dynamic_update: true
+      loop: "{{ reverse_dns_subnets }}"

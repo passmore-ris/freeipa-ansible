@@ -1,0 +1,12 @@
+- name: Configure DNS records
+  hosts: ipaservers
+  become: true
+  gather_facts: true
+  vars_files:
+    - vars/vars.yml
+    - vars/secrets.yml
+
+  tasks:
+
+    - name: Add reverse DNS records
+      ansible.builtin.include_tasks: reverse_dns_records.yml

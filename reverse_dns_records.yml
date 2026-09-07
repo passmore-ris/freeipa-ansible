@@ -1,0 +1,135 @@
+---
+- name: Add honor01 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor01
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.166'
+
+- name: Add honor02 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor02
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.180'
+
+- name: Add honor03 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor03
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.194'
+
+- name: Add honor04 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor04
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.193'
+
+- name: Add honor05 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor05
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.192'
+
+- name: Add honor06 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor06
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.198'
+
+- name: Add honor07 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor07
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.202'
+
+- name: Add honor08 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor08
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.204'
+
+- name: Add honor09 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor09
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.210'
+
+- name: Add honor10 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor10
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.209'
+
+- name: Add honor11 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor11
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.224'
+
+- name: Add honor12 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor12
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.178'
+
+- name: Add honor13 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor13
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.237'
+
+- name: Add honor14 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor14
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.67'
+
+- name: Add honor15 reverse DNS record
+  freeipa.ansible_freeipa.ipadnsrecord:
+    ipaadmin_password: "{{ vault_ipaadmin_password }}"
+    name: honor15
+    zone_name: ipa.rischool.site
+    record_type: 'A'
+    create_reverse: true
+    record_value: '192.168.88.83'

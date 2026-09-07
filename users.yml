@@ -25,6 +25,7 @@
         last: "{{ item.last }}"
         email: "{{ item.email }}"
         password: "{{ item.password }}"
+        # passwordexpiration: "2023-01-19 23:59:59" # Force password change on first login
         principalexpiration: "{{ item.principalexpiration | default(omit) }}"
         state: "{{ item.state }}"
         update_password: on_create
