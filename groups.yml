@@ -40,6 +40,7 @@
           - admin   # State users explicitly, since there shouldn't be many admins
           - passmore.b
           - ustimenkova.r
+          - smakotin.a
         state: present
       tags: admin
 
